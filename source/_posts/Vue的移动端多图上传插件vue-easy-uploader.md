@@ -39,10 +39,6 @@ tags:
 
 
 
-![](https://raw.githubusercontent.com/quanzaiyu/vue-easy-uploader/master/static/06.png)
-
-
-
 # 目录结构
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0006.png)
