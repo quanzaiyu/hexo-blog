@@ -1,5 +1,5 @@
 ---
-title: Vue的简单上传插件vue-easy-uploader
+title: Vue的移动端多图上传插件vue-easy-uploader
 categories:
   - Vue
 tags:
@@ -35,7 +35,11 @@ tags:
 
 先看看上传插件使用时候的效果图:
 
-![](https://raw.githubusercontent.com/quanzaiyu/vue-easy-uploader/master/static/05.png) ![](https://raw.githubusercontent.com/quanzaiyu/vue-easy-uploader/master/static/06.png)
+![](https://raw.githubusercontent.com/quanzaiyu/vue-easy-uploader/master/static/05.png)
+
+
+
+![](https://raw.githubusercontent.com/quanzaiyu/vue-easy-uploader/master/static/06.png)
 
 
 
