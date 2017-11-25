@@ -1,0 +1,26 @@
+<%- partial('_partial/header', {
+    title: config.title,
+    hdClass: 'index-header'
+}) %>
+<div class="container body-wrap">
+    <div id="canvas-container"></div>
+    <ul class="post-list">
+    <% page.posts.each(function(post){ %>
+        <li class="post-list-item fade">
+            <%- partial('_partial/index-item', {
+                post: post,
+                index: true
+            }) %>
+        </li>
+    <% }) %>
+    </ul>
+
+    <%- partial('_partial/paginator') %>
+
+</div>
+
+<script>
+  particlesJS.load('canvas-container', '/json/particles1.json', function () {
+    console.log('callback - particles.js config loaded');
+  })
+</script>

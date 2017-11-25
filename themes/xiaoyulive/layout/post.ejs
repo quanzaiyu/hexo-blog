@@ -1,0 +1,17 @@
+<%- partial('_partial/header', {
+    title: page.title,
+    hdClass: 'post-header'
+}) %>
+<%
+page.reward = 'reward' in page ? (theme.reward && page.reward) : theme.reward
+%>
+<div class="container body-wrap">
+    <!-- <div id="canvas-container"></div> -->
+    <%- partial('_partial/post', {post: page }) %>
+</div>
+
+<!-- <script>
+    particlesJS.load('canvas-container', '/json/particles2.json', function () {
+        console.log('callback - particles.js config loaded');
+    })
+</script> -->
