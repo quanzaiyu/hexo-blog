@@ -1,5 +1,5 @@
 ---
-title: 高效使用ESlint进行开发
+title: JS中集合对象(Array、Map、Set)及类数组对象的使用与对比
 categories:
   - 前端开发
 tags:
@@ -576,7 +576,7 @@ for (const s of str) {
 
 
 
-### String独有方法
+### String方法
 
 除了使用Array原型对象的方法，String还包含其他一些自己独有的方法:
 
