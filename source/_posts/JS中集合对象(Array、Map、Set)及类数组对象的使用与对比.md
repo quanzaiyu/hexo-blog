@@ -576,7 +576,7 @@ for (const s of str) {
 
 
 
-### String方法
+### String独有方法
 
 除了使用Array原型对象的方法，String还包含其他一些自己独有的方法:
 
@@ -635,6 +635,7 @@ console.log(ret4 === str.slice(6, str.length - 1)) // true
 - match()
 - replace()
 - search()
+- split()
 
 ```js
 let str = 'hello world'
@@ -644,6 +645,7 @@ let ret2 = str.replace(/o/g, 'e') // 全局替换
 let ret3 = str.replace(/O/i, 'e') // 不区分大小写，只替换搜索到的第一个字串
 let ret4 = str.search(/l/) // 返回搜索到的第一个匹配字串的索引
 let ret5 = str.search(/l/g) // 全局无效，同上
+let ret6 = str.split(/o|l/)
 
 console.log(ret0) // ["r", index: 8, input: "hello world"]
 console.log(ret1) // ["o", "o"]
@@ -651,10 +653,9 @@ console.log(ret2) // "helle werld"
 console.log(ret3) // "helle world"
 console.log(ret4) // 2
 console.log(ret5) // 2
+console.log(ret6) // ["he", "", "", " w", "r", "d"]
 console.log(str) // 不改变源字符串 'hello world'
 ```
-
-
 
 # 转化
 
