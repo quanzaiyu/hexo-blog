@@ -1,5 +1,5 @@
 ---
-title: 01.Python学习笔记 - 基础
+title: Python学习笔记01 - 基础
 categories:
   - Python
 tags:
@@ -116,16 +116,43 @@ print('hello', name)
 
 ## 基本数据类型
 
-整数: 1，100，-8080，0，0xff00，0xa5b4c3d2
+整数(int): 1，100，-8080，0，0xff00，0xa5b4c3d2
 
-浮点数: 1.23，3.14，-9.01，1.23e9，1.2e-5
+浮点数(float): 1.23，3.14，-9.01，1.23e9，1.2e-5
 
-字符串: 'abc'，"xyz"，'I'm "OK"!'
+字符串(str): 'abc'，"xyz"，'I'm "OK"!'
 
-布尔值: True、False（注意首字母是大写）
+布尔值(bool): True、False（注意首字母是大写）
 
 空值: None
 
+### 数据类型转换
+
+```python
+>>> int('123') # str => int
+123
+>>> int(12.34) # float => int
+12
+>>> float('12.34') # str => float
+12.34
+>>> str(1.23) # num => str
+'1.23'
+>>> bool(1) # num => bool
+True
+>>> bool('') # str => bool
+False
+>>> bool('abc') # str => bool
+True
+```
+### 字符串的处理
+
+```python
+>>> a = 'abc'
+>>> a.replace('a', 'A')
+'Abc'
+>>> a
+'abc'
+```
 
 
 ## 字符串的特殊用法
@@ -284,6 +311,7 @@ PI = 3.14159265359
 >>> 'Hello, {0}, 成绩提升了 {1:.1f}%'.format('小明', 17.125)
 'Hello, 小明, 成绩提升了 17.1%'
 ```
+
 
 
 # 集合类型
@@ -445,6 +473,14 @@ else:
 ## 循环
 
 ### for...in
+
+可以直接作用于`for`循环的数据类型有以下两种:
+
+一类是集合数据类型，如`list`、`tuple`、`dict`、`set`、`str`等；
+
+一类是`generator`，包括生成器和带`yield`的generator function。
+
+这些可以直接作用于`for`循环的对象统称为可迭代对象：`Iterable`。
 
 ```python
 names = ['Michael', 'Bob', 'Tracy']
