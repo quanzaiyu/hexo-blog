@@ -143,42 +143,6 @@ app.route('/book')
   });
 ```
 
-### express.Router
-
-创建模块化的路由文件
-
-**book.js**
-
-```js
-var express = require('express');
-var router = express.Router();
-
-// 该路由使用的中间件
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
-  next();
-});
-// 定义网站主页的路由
-router.get('/', function(req, res) {
-  res.send('Birds home page');
-});
-// 定义 about 页面的路由
-router.get('/about', function(req, res) {
-  res.send('About birds');
-});
-
-module.exports = router;
-```
-
-在入口文件 **app.js** 中加入
-
-```js
-var birds = require('./birds');
-app.use('/birds', birds);
-```
-
-则可以发送 `/birds` 和 `/birds/about` 的请求。
-
 
 
 ## 请求和响应
@@ -234,7 +198,154 @@ app.get('/', (req, res) => {
 
 
 
-## 404
+# 中间件
+
+Express 是一个自身功能极简，完全是由路由和中间件构成一个的 web 开发框架：从本质上来说，一个 Express 应用就是在调用各种中间件。
+
+*中间件（Middleware）* 是一个函数，它可以访问请求对象（[request object](http://www.expressjs.com.cn/4x/api.html#req) (`req`)）, 响应对象（[response object](http://www.expressjs.com.cn/4x/api.html#res) (`res`)）, 和 web 应用中处于请求-响应循环流程中的中间件，一般被命名为 `next` 的变量。
+
+中间件的功能包括：
+
+- 执行任何代码。
+- 修改请求和响应对象。
+- 终结请求-响应循环。
+- 调用堆栈中的下一个中间件。
+
+如果当前中间件没有终结请求-响应循环，则必须调用 `next()` 方法将控制权交给下一个中间件，否则请求就会挂起。
+
+Express 应用可使用如下几种中间件：
+
+- [应用级中间件](http://www.expressjs.com.cn/guide/using-middleware.html#middleware.application)
+- [路由级中间件](http://www.expressjs.com.cn/guide/using-middleware.html#middleware.router)
+- [错误处理中间件](http://www.expressjs.com.cn/guide/using-middleware.html#middleware.error-handling)
+- [内置中间件](http://www.expressjs.com.cn/guide/using-middleware.html#middleware.built-in)
+- [第三方中间件](http://www.expressjs.com.cn/guide/using-middleware.html#middleware.third-party)
+
+使用可选则挂载路径，可在应用级别或路由级别装载中间件。另外，你还可以同时装在一系列中间件函数，从而在一个挂载点上创建一个子中间件栈。
+
+## 应用级中间件
+
+应用级中间件绑定到 [app 对象](http://www.expressjs.com.cn/4x/api.html#app) 使用 `app.use()` 和 `app.METHOD()`， 其中， `METHOD` 是需要处理的 HTTP 请求的方法，例如 GET, PUT, POST 等等，全部小写。
+
+```js
+var app = express();
+
+// 没有挂载路径的中间件，应用的每个请求都会执行该中间件
+app.use(function (req, res, next) {
+  console.log('Time:', Date.now());
+  next();
+});
+
+// 一个中间件栈，对任何指向 /user/:id 的 HTTP 请求打印出相关信息
+app.use('/user/:id', function(req, res, next) {
+  console.log('Request URL:', req.originalUrl);
+  next();
+}, function (req, res, next) {
+  console.log('Request Type:', req.method);
+  next();
+}, function (req, res, next) {
+  console.log('Request Test');
+  next();
+});
+
+// 路由和句柄函数(中间件系统)，处理指向 /user/:id 的 GET 请求
+app.get('/user/:id', function (req, res, next) {
+  res.send('USER');
+});
+```
+
+注意，必须使用`next()`才能使应用程序继续调用下一个中间件，如果不写，则请求循环将终止，之后的中间件将不再执行。
+
+## 跳过中间件
+
+如果需要在中间件栈中跳过剩余中间件，调用 `next('route')` 方法将控制权交给下一个路由。 **注意**： `next('route')` 只对使用 `app.VERB()` 或 `router.VERB()` 加载的中间件有效。
+
+```js
+// 一个中间件栈，处理指向 /user/:id 的 GET 请求
+app.get('/user/:id', function (req, res, next) {
+  // 如果 user id 为 0, 跳到下一个路由
+  if (req.params.id == 0) next('route');
+  // 否则将控制权交给栈中下一个中间件
+  else next(); //
+}, function (req, res, next) {
+  // 渲染常规页面
+  res.render('regular');
+});
+
+// 处理 /user/:id， 渲染一个特殊页面
+app.get('/user/:id', function (req, res, next) {
+  res.render('special');
+});
+```
+
+## 路由级中间件express.Router
+
+创建模块化的路由文件
+
+**book.js**
+
+```js
+var express = require('express');
+var router = express.Router();
+
+// 该路由使用的中间件
+router.use(function timeLog(req, res, next) {
+  console.log('Time: ', Date.now());
+  next();
+});
+
+// 定义网站主页的路由
+router.get('/', function(req, res) {
+  res.send('Birds home page');
+});
+
+// 定义 about 页面的路由
+router.get('/about', function(req, res) {
+  res.send('About birds');
+});
+
+// 一个中间件栈，显示任何指向 /user/:id 的 HTTP 请求的信息
+router.use('/user/:id', function(req, res, next) {
+  console.log('Request URL:', req.originalUrl);
+  next();
+}, function (req, res, next) {
+  console.log('Request Type:', req.method);
+  next();
+});
+
+// 一个中间件栈，处理指向 /user/:id 的 GET 请求
+router.get('/user/:id', function (req, res, next) {
+  // 如果 user id 为 0, 跳到下一个路由
+  if (req.params.id == 0) next('route');
+  // 负责将控制权交给栈中下一个中间件
+  else next(); //
+}, function (req, res, next) {
+  // 渲染常规页面
+  res.render('regular');
+});
+
+// 处理 /user/:id， 渲染一个特殊页面
+router.get('/user/:id', function (req, res, next) {
+  console.log(req.params.id);
+  res.render('special');
+});
+
+module.exports = router;
+```
+
+在入口文件 **app.js** 中加入
+
+```js
+var app = express();
+var birds = require('./birds');
+app.use('/person', birds);
+```
+
+则可以发送 `/person和 ` `/person/about` 的请求，也可处理 `/person/user/:id`的请求，并执行中间件操作。
+
+
+
+## 404的处理
 
 **app.js** 中添加
 
@@ -248,22 +359,37 @@ app.use(function(req, res, next) {
 
 
 
-## 错误处理器
+## 错误处理中间件
 
 **app.js** 中添加
 
 ```js
-app.use(function(err, req, res, next) {
-  console.error(err.stack)
-  res.status(500).send('Something broke!')
-})
+function errorHandler(err, req, res, next) {
+  if (res.headersSent) {
+    return next(err);
+  }
+  res.status(500);
+  res.render('error', { error: err });
+}
 ```
 
-这样就可以捕捉请求错误了
+模板为`/views/error.jade`，这样就可以捕捉请求错误了
 
 
 
-## 静态资源
+## 第三方中间件
+
+参考 [第三方中间件](http://www.expressjs.com.cn/resources/middleware.html) 获取 Express 中经常用到的第三方中间件列表。
+
+常用的第三方中间件有:
+
+**cookie-parser**、**body-parser**、**multer**
+
+
+
+# 静态资源
+
+`express.static` 是 Express 唯一内置的中间件。它基于 [serve-static](https://github.com/expressjs/serve-static)，负责在 Express 应用中提托管静态资源。
 
 ```js
 app.use(express.static('public'))
@@ -273,7 +399,7 @@ app.use(express.static('public'))
 
 要访问之只需要输入 `http://localhost:8081/logo.png` 即可
 
-### 挂载到虚拟路径
+## 挂载到虚拟路径
 
 ```js
 app.use('/static', express.static('public'))
@@ -281,7 +407,7 @@ app.use('/static', express.static('public'))
 
 此时访问 `/public/logo.png`文件，则输入`http://localhost:8081/static/logo.png`
 
-### 多个资源目录设置
+## 多个资源目录设置
 
 ```js
 app.use(express.static('public'))
@@ -292,7 +418,7 @@ app.use(express.static('files'))
 
 
 
-## 请求的处理
+# 请求的处理
 
 **get.html**
 
@@ -367,7 +493,7 @@ app.post('/process_post', urlencodedParser, function (req, res) {
 
 
 
-## 文件上传
+# 文件上传
 
 **uploader.html**
 
@@ -429,7 +555,7 @@ app.post('/file_upload', function (req, res) {
 
 
 
-## Cookie 管理
+# Cookie 管理
 
 **app.js** 中添加
 
@@ -481,7 +607,125 @@ set DEBUG=myapp & npm start
 
 
 
+# 模板引擎
 
+express默认使用jade(pug) 模板引擎。
+
+设置模板引擎:
+
+```js
+app.set('view engine', 'jade')
+```
+
+在`views`目录下新建`index.jade`:
+
+```jade
+html
+  head
+    title!= title
+  body
+    h1!= message
+```
+
+渲染模板:
+
+```js
+app.get('/', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!'})
+})
+```
+
+
+
+# 调试
+
+打印所有调试信息，当应用收到请求时，能看到 Express 代码中打印出的日志。
+
+```
+set DEBUG=express:* & npm start
+```
+
+设置 DEBUG 的值为 `express:router`，只查看路由部分的日志；
+
+设置 DEBUG 的值为 `express:application`，只查看应用部分的日志。
+
+可通过逗号隔开的名字列表来指定多个调试命名空间:
+
+```
+DEBUG=http,mail,express:* npm start
+```
+
+
+
+# 代理
+
+当在代理服务器之后运行 Express 时，请将应用变量 `trust proxy` 设置（使用 [app.set()](http://www.expressjs.com.cn/4x/api.html#app.set)）为下述列表中的一项。
+
+- Boolean: 
+
+  如果为 `true`，客户端 IP 地址为 `X-Forwarded-*` 头最左边的项。
+
+  如果为 `false`, 应用直接面向互联网，客户端 IP 地址从 `req.connection.remoteAddress` 得来，这是默认的设置。
+
+- IP 地址
+
+  如: 
+
+  ```js
+  app.set('trust proxy', 'loopback') // 指定唯一子网
+  app.set('trust proxy', 'loopback, 123.123.123.123') // 指定子网和 IP 地址
+  app.set('trust proxy', 'loopback, linklocal, uniquelocal') // 指定多个子网
+  app.set('trust proxy', ['loopback', 'linklocal', 'uniquelocal']) // 使用数组指定多个子网
+  ```
+
+- Number: 将代理服务器前第 `n` 跳当作客户端。
+
+- Function
+
+  如:
+
+  ```js
+  app.set('trust proxy', function (ip) {
+    if (ip === '127.0.0.1' || ip === '123.123.123.123') return true; // 受信的 IP 地址
+    else return false;
+  })
+  ```
+
+详见: [为 Express 设置代理](http://www.expressjs.com.cn/guide/behind-proxies.html) 
+
+
+
+# 数据库
+
+为 Express 应用添加连接数据库的能力，只需要加载相应数据库的 Node.js 驱动即可。
+
+## MySQL
+
+```bash
+npm install mysql
+```
+
+数据库链接语句如下:
+
+```js
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : '',
+  password : ''
+});
+
+connection.connect();
+
+connection.query('SELECT * from user_table', function(err, rows, fields) {
+  if (err) throw err;
+  console.log('The row is: ', rows[0].name);
+});
+
+connection.end();
+```
+
+更多数据库驱动详见: [集成数据库](http://www.expressjs.com.cn/guide/database-integration.html#mysql) 
 
 
 
