@@ -89,6 +89,14 @@ name = input()
 print('hello', name)
 ```
 
+可使用`sys.stdout`命名空间下的输出语句
+
+```python
+import sys;
+x = 'hello world';
+sys.stdout.write(x + '\n')
+```
+
 
 
 # 基础语法
@@ -112,38 +120,73 @@ print('hello', name)
 
 如果`.py`文件本身使用`UTF-8`编码，并且也申明了`# -*- coding: utf-8 -*-`，打开命令提示符测试就可以正常显示中文。
 
+### 三引号注释
+
+```python
+'''
+这是多行注释，用三个单引号
+这是多行注释，用三个单引号 
+这是多行注释，用三个单引号
+'''
+"""
+这是多行注释，用三个单引号
+这是多行注释，用三个单引号 
+这是多行注释，用三个单引号
+"""
+```
+
+
+
+## 保留字
+
+```python
+import keyword
+keyword.kwlist
+# 输出
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+```
+
 
 
 ## 基本数据类型
 
-整数(int): 1，100，-8080，0，0xff00，0xa5b4c3d2
+- Number（数字num）
+  - 整数(int): 1，100，-8080，0，0xff00，0xa5b4c3d2
+  - 浮点数(float): 1.23，3.14，-9.01，1.23e9，1.2e-5
+  - 复数: 1 + 2j、 1.1 + 2.2j
+- String（字符串str）: 'abc'，"xyz"，'I'm "OK"!'
+- List（列表list）
+- Tuple（元组tuple）
+- Sets（集合set）
+- Dictionary（字典dict）
+- Boolean （布尔值bool）: True、False（注意首字母是大写）
+- None（空值）: None
 
-浮点数(float): 1.23，3.14，-9.01，1.23e9，1.2e-5
 
-字符串(str): 'abc'，"xyz"，'I'm "OK"!'
-
-布尔值(bool): True、False（注意首字母是大写）
-
-空值: None
 
 ### 数据类型转换
 
-```python
->>> int('123') # str => int
-123
->>> int(12.34) # float => int
-12
->>> float('12.34') # str => float
-12.34
->>> str(1.23) # num => str
-'1.23'
->>> bool(1) # num => bool
-True
->>> bool('') # str => bool
-False
->>> bool('abc') # str => bool
-True
-```
+| 函数                                       | 描述                              |
+| ---------------------------------------- | ------------------------------- |
+| [int](http://www.runoob.com/python3/python-func-int.html)(x [,base]) | 将x转换为一个整数                       |
+| [float(x)](http://www.runoob.com/python3/python-func-float.html) | 将x转换到一个浮点数                      |
+| [complex](http://www.runoob.com/python3/python-func-complex.html)(real [,imag]) | 创建一个复数                          |
+| [str(x)](http://www.runoob.com/python3/python-func-str.html) | 将对象 x 转换为字符串                    |
+| [repr(x)](http://www.runoob.com/python3/python-func-repr.html) | 将对象 x 转换为表达式字符串                 |
+| [eval(str)](http://www.runoob.com/python3/python-func-eval.html) | 用来计算在字符串中的有效Python表达式,并返回一个对象   |
+| [tuple(s)](http://www.runoob.com/python3/python3-func-tuple.html) | 将序列 s 转换为一个元组                   |
+| [list(s)](http://www.runoob.com/python3/python3-att-list-list.html) | 将序列 s 转换为一个列表                   |
+| [set(s)](http://www.runoob.com/python3/python-func-set.html) | 转换为可变集合                         |
+| [dict(d)](http://www.runoob.com/python3/python-func-dict.html) | 创建一个字典。d 必须是一个序列 (key,value)元组。 |
+| [frozenset(s)](http://www.runoob.com/python3/python-func-frozenset.html) | 转换为不可变集合                        |
+| [chr(x)](http://www.runoob.com/python3/python-func-chr.html) | 将一个整数转换为一个字符                    |
+| [unichr(x)](http://www.runoob.com/python3/python-func-unichr.html) | 将一个整数转换为Unicode字符               |
+| [ord(x)](http://www.runoob.com/python3/python-func-ord.html) | 将一个字符转换为它的整数值                   |
+| [hex(x)](http://www.runoob.com/python3/python-func-hex.html) | 将一个整数转换为一个十六进制字符串               |
+| [oct(x)](http://www.runoob.com/python3/python-func-oct.html) | 将一个整数转换为一个八进制字符串                |
+
+
+
 ### 字符串的处理
 
 ```python
@@ -154,10 +197,24 @@ True
 'abc'
 ```
 
-
 ## 字符串的特殊用法
 
-**r'' 表示引号内部的字符串默认不转义**
+**多行语句**
+
+```python
+total = item_one + \
+        item_two + \
+        item_three
+```
+
+**在 [], {}, 或 () 中的多行语句，不需要使用反斜杠(\)**
+
+```python
+total = ['item_one', 'item_two', 'item_three',
+        'item_four', 'item_five']
+```
+
+**自然字符串，使用 r'' 表示引号内部的字符串默认不转义**
 
 ```python
 >>> print('\\\t\\')
@@ -166,12 +223,12 @@ True
 \\\t\\
 ```
 
-**'''...''' 表示多行内容**
+**使用三引号 '''...''' 表示多行内容** 
 
 ```python
 >>> print('''line1
-... line2
-... line3''')
+    line2
+    line3''')
 line1
 line2
 line3
@@ -574,3 +631,4 @@ while n < 10:
 
 [廖雪峰的官方网站: Python教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000) 
 
+[welcome to python.org](https://www.python.org/) 

@@ -301,7 +301,372 @@ f1(*args, **kw)
 
 
 
-# 递归函数
+# 闭包
+
+## 以函数作为返回值
+
+```python
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
+    return sum
+
+sum = lazy_sum(1,2,3,4,5)
+print(sum) # <function lazy_sum.<locals>.sum at 0x0000029DF5E930D0>
+print(sum()) # 15
+```
+
+以上代码，我们在函数`lazy_sum`中又定义了函数`sum`，并且，内部函数`sum`可以引用外部函数`lazy_sum`的参数和局部变量，当`lazy_sum`返回函数`sum`时，相关参数和变量都保存在返回的函数中，这种程序结构被称为“闭包（`Closure`）”。
+
+
+
+## 未立即执行的函数
+
+```python
+def count():
+    fs = []
+    for i in range(1, 4):
+        def f():
+             return i*i
+        fs.append(f)
+    return fs
+
+f1, f2, f3 = count()
+
+print(f1()) # 9
+print(f2()) # 9
+print(f3()) # 9
+```
+
+以上代码，本期待获得的值为`1 4 9`，却由于未立即执行，最后获得了`9 9 9`。
+
+原因就在于返回的函数引用了变量`i`，但它并非立刻执行。等到3个函数都返回时，它们所引用的变量`i`已经变成了`3`，因此最终结果为`9`。
+
+
+
+## 使用立即执行函数实现变量暂存
+
+```python
+def count():
+    def f(j):
+        def g():
+            return j*j
+        return g
+    fs = []
+    for i in range(1, 4):
+        fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
+    return fs
+
+fs = count()
+
+print(fs[0]()) # 1
+print(fs[1]()) # 4
+print(fs[2]()) # 9
+```
+
+
+
+# Lambda表达式
+
+即匿名函数，`lambda x: x * x`相当于:
+
+```python
+def f(x):
+    return x * x
+```
+
+## lambda表达式的一些应用:
+
+在map中进行迭代:
+
+```python
+list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+[1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+在filter中进行过滤:
+
+```python
+def is_odd(n):
+    return n % 2 == 1
+
+list(filter(lambda n: n%2==1, range(1,20)))
+# [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] 
+```
+
+闭包:
+
+```python
+def build(x, y):
+    return lambda: x * x + y * y
+
+print(build(1,2)())
+```
+
+
+
+# 高阶函数
+
+## map
+
+`map()`传入的第一个参数是`f`，即函数对象本身。返回的结果是一个`Iterator`，`Iterator`是惰性序列，需要通过`list()`函数让它把整个序列都计算出来并返回一个list。
+
+### map的应用
+
+将所有list为数值的元素转化为字符串
+
+```python
+list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+# ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+```
+
+求立方
+
+```python
+l = list(map(lambda x: x**3 , [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+# [1, 8, 27, 64, 125, 216, 343, 512, 729]
+```
+
+格式化不规范的英文名，使之首字母大写，后面的字母小写
+
+```python
+def normalize(name):
+    return name[0:1].upper() + name[1:].lower()
+L1 = ['adam', 'LISA', 'barT']
+L2 = list(map(normalize, L1)) # ['Adam', 'Lisa', 'Bart'] 
+```
+
+
+
+
+
+
+
+## reduce
+
+这个函数必须接收两个参数，`reduce`把结果继续和序列的下一个元素做累积计算。
+
+### reduce的应用
+
+求和
+
+```python
+from functools import reduce
+s = reduce(lambda x,y: x+y, [1, 2, 3, 4, 5, 6, 7, 8, 9]) # 45
+```
+
+最大值
+
+```python
+from functools import reduce
+def max(x, y):
+  if (x > y):
+    return x
+  return y
+
+s = reduce(max, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(s)
+```
+
+
+
+## fliter
+
+过滤器，筛选出满足条件(返回值为True)的序列
+
+### filter的应用
+
+过滤奇数
+
+```python
+l = list(filter(lambda x: x%2==1, [1, 2, 4, 5, 6, 9, 10, 15]))
+# [1, 5, 9, 15]
+```
+
+取出空字符
+
+```python
+def not_empty(s):
+    return s and s.strip()
+
+l = list(filter(not_empty, ['A', '', 'B', None, 'C', '  ']))
+# ['A', 'B', 'C']
+```
+
+求素数
+
+```python
+def _odd_iter():
+    n = 1
+    while True:
+        n = n + 2
+        yield n
+
+def _not_divisible(n):
+    return lambda x: x % n > 0
+
+def primes():
+    yield 2
+    it = _odd_iter() # 初始序列
+    while True:
+        n = next(it) # 返回序列的第一个数
+        yield n
+        it = filter(_not_divisible(n), it) # 构造新序列
+
+# 打印1000以内的素数:
+for n in primes():
+    if n < 1000:
+        print(n)
+    else:
+        break
+```
+
+
+
+## sorted
+
+字典排序
+
+```python
+sorted([36, 5, -12, 9, -21]) # [-21, -12, 5, 9, 36]
+sorted(['bob', 'about', 'Zoo', 'Credit']) # ['Credit', 'Zoo', 'about', 'bob']
+```
+
+sorted可以携带第二参数，用于对list进行处理后输出排序
+
+```python
+sorted([36, 5, -12, 9, -21], key=abs) # [5, 9, -12, -21, 36]
+```
+
+忽略英文大小写进行排序
+
+```python
+sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower) # ['about', 'bob', 'Credit', 'Zoo']
+```
+
+可以传入第三个参数`reverse=True`进行反转排序
+
+```python
+sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
+# ['Zoo', 'Credit', 'bob', 'about']
+```
+
+
+
+# 装饰器
+
+本质上，decorator就是一个返回函数的高阶函数。所以，我们要定义一个能打印日志的decorator，可以定义如下：
+
+```python
+def log(func):
+    def wrapper(*args, **kw):
+        print('call %s():' % func.__name__)
+        return func(*args, **kw)
+    return wrapper
+
+@log
+def now():
+    print('2015-3-25')
+
+now()
+# call now():
+# 2015-3-25
+```
+
+上面的`log`，因为它是一个decorator，所以接受一个函数作为参数，并返回一个函数。我们要借助Python的@语法，把decorator置于函数的定义处即可。
+
+调用`now()`函数，不仅会运行`now()`函数本身，还会在运行`now()`函数前打印一行日志。
+
+
+
+如果decorator本身需要传入参数，那就需要编写一个返回decorator的高阶函数。比如，要自定义log的文本：
+
+```python
+def log(text):
+    def decorator(func):
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+
+@log('print')
+def now():
+    print('2015-3-25')
+
+now()
+# print now():
+# 2015-3-25
+```
+
+## 使用functools.wraps
+
+普通装饰器:
+
+```python
+import functools
+
+def log(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kw):
+        print('call %s():' % func.__name__)
+        return func(*args, **kw)
+    return wrapper
+```
+
+带参数的装饰器:
+
+```python
+import functools
+
+def log(text):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+```
+
+
+
+# 偏函数
+
+比如使用int将字符串转化为数值类型，可以增加第二参数，代表转化为n进制数
+
+```python
+int('12345', base=8) # 5349
+```
+
+将之封装为一个将字符串转化为n进制的函数，方法如下:
+
+```python
+def int2(x, base=2):
+    return int(x, base)
+
+int2('1000000') # 64
+```
+
+可以使用偏函数进一步简化:
+
+```python
+import functools
+int2 = functools.partial(int, base=2)
+
+int2('1000000') # 64
+```
+
+所以，`functools.partial`的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
+
+
+
+# 递归函数的应用
+
+**求阶乘** 
 
 ```python
 def fact(n):
