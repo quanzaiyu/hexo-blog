@@ -148,21 +148,19 @@ keyword.kwlist
 
 
 
-## 基本数据类型
+## 数据类型
 
 - Number（数字num）
   - 整数(int): 1，100，-8080，0，0xff00，0xa5b4c3d2
   - 浮点数(float): 1.23，3.14，-9.01，1.23e9，1.2e-5
-  - 复数: 1 + 2j、 1.1 + 2.2j
+  - 复数(complex): 1 + 2j、 1.1 + 2.2j
 - String（字符串str）: 'abc'，"xyz"，'I'm "OK"!'
+- Boolean （布尔值bool）: True、False（注意首字母是大写）
+- None（空值）: None
 - List（列表list）
 - Tuple（元组tuple）
 - Sets（集合set）
 - Dictionary（字典dict）
-- Boolean （布尔值bool）: True、False（注意首字母是大写）
-- None（空值）: None
-
-
 
 ### 数据类型转换
 
@@ -185,8 +183,6 @@ keyword.kwlist
 | [hex(x)](http://www.runoob.com/python3/python-func-hex.html) | 将一个整数转换为一个十六进制字符串               |
 | [oct(x)](http://www.runoob.com/python3/python-func-oct.html) | 将一个整数转换为一个八进制字符串                |
 
-
-
 ### 字符串的处理
 
 ```python
@@ -196,6 +192,84 @@ keyword.kwlist
 >>> a
 'abc'
 ```
+
+
+
+## 运算符
+
+### 算术运算符
+
+`+`、`-`、`*`、`/`、`%`、`**`(幂)、`//`(取整除)
+
+### 比较运算符
+
+`==`、`!=`、`>`、`<`、`>=`、`<=`
+
+### 赋值运算符
+
+`=`、`+=`、`-=`、`*=`、`/=`、`%=`、`**=`、`//=`
+
+### 位运算符
+
+`&`、`|`、`~`、`^`、`<<`、`>>`
+
+### 逻辑运算符
+
+`and`、`or`、`not`
+
+### 成员运算符
+
+- in : 如果在指定的序列中找到值返回 True，否则返回 False。
+- not in : 如果在指定的序列中没有找到值返回 True，否则返回 False。
+
+如
+
+```python
+a = 10
+b = 1
+list = [1, 2, 3, 4, 5 ]
+print(a in list) # False
+print(b in list) # True
+print(a not in list) # True
+print(b not in list) # False
+```
+
+### 身份运算符
+
+- is : 判断两个标识符是不是引用自一个对象
+- is not : 是判断两个标识符是不是引用自不同对象
+
+```python
+a = 20
+b = 20
+print(a is b) # True
+print(a is not b) # False
+a = 10
+print(a is b) # False
+print(a is not b) # True
+```
+
+### 运算符优先级
+
+## Python运算符优先级
+
+| 运算符                      | 描述                                |
+| ------------------------ | --------------------------------- |
+| **                       | 指数 (最高优先级)                        |
+| ~ + -                    | 按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@) |
+| * / % //                 | 乘，除，取模和取整除                        |
+| + -                      | 加法减法                              |
+| >> <<                    | 右移，左移运算符                          |
+| &                        | 位 'AND'                           |
+| ^ \|                     | 位运算符                              |
+| <= < > >=                | 比较运算符                             |
+| <> == !=                 | 等于运算符                             |
+| = %= /= //= -= += *= **= | 赋值运算符                             |
+| is is not                | 身份运算符                             |
+| in not in                | 成员运算符                             |
+| not or and               | 逻辑运算符                             |
+
+
 
 ## 字符串的特殊用法
 

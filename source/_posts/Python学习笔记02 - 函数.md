@@ -8,13 +8,71 @@ tags:
 
 # 内置函数
 
+## 数学函数
+
+不在`math` 下的数学函数:
+
+abs()、min()、max()、round()
+
 ```python
->>> abs(100)
-100
->>> abs(-20)
-20
->>> abs(12.34)
-12.34
+divmod(100,10)  # 返回一个元组（10,0），第一个元素的100/10的商，第二个元素的100/10的余数 
+pow(x,y)  # 求次方，返回x**y的结果
+pow(x,y,z) # 返回 x**y%z 的结果
+range()  # 获取随机数或随机字符 eg. range(10) 从0到10的随机数
+```
+
+## 转换函数
+
+#### 类型转换
+
+int()、bool()、str()、list()、set()、tuple()
+
+#### 进制转换
+
+bin()、oct()、hex()
+
+#### 其它转换
+
+ascii()、bytes()、chr()、ord()
+
+## 集合运算
+
+all()、any()、filter()、map()
+
+```python
+enumerate()  # 接收序列化类型的数据，返回一个迭代器（对象). e.g. for i,item in enumerate(['one','two','three']): print(i,item)  打印1 'one' 换行2 'two'换行 3 'three'
+frozenset()  #转换为不可变的集合
+globals()  # 返回一个字典，包括所有的全局变量与它的值所组成的键值对
+locals()  # 返回一个字典，包括所有的局部变量与它的值所组成的键值对
+reversed()  #对序列化类型数据反向排序，返回一个新的对象。注意与对象的reverse方法区别，后者是就地改变对象
+sorted() # 对序列化类型数据正向排序，返回一个新的对象。注意与对象的sort方法区别，后者是就地改变对象
+slice()  #对序列化类型数据切片，返回一个新的对象。eg. slice(起始下标，终止下标，步长)，步长默认为1
+zip() # 接收多个序列化类型的数据，对各序列化数据中的元素，按索引位置分类成一个个元组。
+```
+
+## 其他函数
+
+next() 、iter() 、object() 
+
+```python
+compile() # 接收.py文件或字符串作为传入参数，将其编译成python字节码
+eval()    # 执行python代码，并返回其执行结果。 e.g. eval("1+2+3")   eval("print(123)").   在接收用户输入时应避免使用eval，因为别有用心的用户可能借此注入恶意代码
+exec()    #执行python代码（可以是编译过的，也可以是未编译的），没有返回结果（返回None） e.g. exec(compile("print(123)","<string>","exec"))   exec("print(123)")
+dir()  # 接收对象作为参数，返回该对象的所有属性和方法
+help()  # 接收对象作为参数，更详细地返回该对象的所有属性和方法
+isinstance(object, class)  # 判断对象是否是某个类的实例. e.g. isinstance([1,2,3],list)
+format()  #字符串格式化
+hash()  # 对传入参数取哈希值并返回
+id() # 返回内存地址，可用于查看两个变量是否指向相同一块内存地址
+input('please input:')  # 提示用户输入，返回用户输入的内容（不论输入什么，都转换成字符串类型）
+issubclass(subclass,class) #查看这个类是否是另一个类的派生类，如果是返回True，否则返回False
+len('string')  # 返回字符串长度，在python3中以字符为单位，在python2中以字节为单位
+memoryview()  # 查看内存地址
+repr()  # 执行传入对象中的_repr_方法
+type() # 返回对象类型
+staticmethod() # 返回静态方法
+super()  # 返回基类
+vars() #返回当前模块中的所有变量
 ```
 
 
@@ -681,3 +739,4 @@ def fact(n):
 
 [廖雪峰的官方网站: Python教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143167832686474803d3d2b7d4d6499cfd093dc47efcd000) 
 
+[python3内置函数详解](http://www.cnblogs.com/huamingao/p/5887887.html) 
