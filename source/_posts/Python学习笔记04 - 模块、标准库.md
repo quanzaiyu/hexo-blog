@@ -1,5 +1,5 @@
 ---
-title: Python学习笔记04 - 模块导入和导出、标准库
+title: Python学习笔记04 - 模块、标准库
 categories:
   - Python
 tags:
@@ -18,7 +18,126 @@ tags:
 
 
 
-# python 标准库
+# 使用模块
+
+使用内建的`sys`模块为例
+
+**hello.py**
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+' a test module '
+
+__author__ = 'Quanzaiyu'
+
+import sys
+
+def test():
+    args = sys.argv
+    if len(args)==1:
+        print('Hello, world!')
+    elif len(args)==2:
+        print('Hello, %s!' % args[1])
+    else:
+        print('Too many arguments!')
+
+if __name__=='__main__':
+    test()
+```
+
+运行
+
+```python
+$ python3 hello.py
+Hello, world!
+$ python hello.py Xiaoyu
+Hello, Xiaoyu!
+```
+
+运行`python3 hello.py`获得的`sys.argv`就是`['hello.py']`。
+
+运行`python3 hello.py Michael`获得的`sys.argv`就是`['hello.py', 'Michael]`。
+
+因此可以看到两种运行结果。
+
+
+
+# 自定义模块
+
+## 作用域
+
+在一个模块中，我们可能会定义很多函数和变量，但有的函数和变量我们希望给别人使用，有的函数和变量我们希望仅仅在模块内部使用。在Python中，是通过`_`前缀来实现的。
+
+正常的函数和变量名是公开的（public），可以被直接引用，比如：`abc`，`x123`，`PI`等；
+
+类似`__xxx__`这样的变量是特殊变量，可以被直接引用，但是有特殊用途，比如上面的`__author__`，`__name__`就是特殊变量，`hello`模块定义的文档注释也可以用特殊变量`__doc__`访问，我们自己的变量一般不要用这种变量名；
+
+类似`_xxx`和`__xxx`这样的函数或变量就是非公开的（private），不应该被直接引用，比如`_abc`，`__abc`等。
+
+**export.py**
+
+```python
+def _private_1(name):
+    return 'Hello, %s' % name
+
+def _private_2(name):
+    return 'Hi, %s' % name
+
+def greeting(name):
+    if len(name) > 3:
+        return _private_1(name)
+    else:
+        return _private_2(name)
+```
+
+我们在模块里公开`greeting()`函数，而把内部逻辑用private函数隐藏起来了，这样，调用`greeting()`函数不用关心内部的private函数细节，这也是一种非常有用的代码封装和抽象的方法，即：
+
+外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public。
+
+## 导出
+
+导出模块不需要特定的语句，整个`export.py`文件就是一个模块，比如在上述文件同级目录下有一个叫`test.py`的文件:
+
+```python
+import export
+
+hello = export.greeting('xiaoyu')
+print(hello)
+hello = export.greeting('a')
+print(hello)
+```
+
+测试:
+
+```python
+$ python test.py
+Hello, xiaoyu
+Hi, a
+```
+
+
+
+# 安装第三方模块
+
+在Python中，安装第三方模块，是通过包管理工具pip完成的。
+
+第三方库都会在Python官方的[pypi.python.org](https://pypi.python.org/)网站注册，要安装一个第三方库，必须先知道该库的名称，可以在官网或者pypi上搜索，比如Pillow的名称叫[Pillow](https://pypi.python.org/pypi/Pillow/)，因此，安装Pillow的命令就是：
+
+```
+pip install Pillow
+```
+
+## Anaconda
+
+在使用Python时，我们经常需要用到很多第三方库，例如，上面提到的Pillow，以及MySQL驱动程序，Web框架Flask，科学计算Numpy等。用pip一个一个安装费时费力，还需要考虑兼容性。我们推荐直接使用[Anaconda](https://www.anaconda.com/)，这是一个基于Python的数据处理和科学计算平台，它已经内置了许多非常有用的第三方库，我们装上Anaconda，就相当于把数十个第三方模块自动安装好了，非常简单易用。
+
+可以从[Anaconda官网](https://www.anaconda.com/download/)下载GUI安装包，安装包有500~600M，所以需要耐心等待下载。下载后直接安装，Anaconda会把系统Path中的python指向自己自带的Python，并且，Anaconda安装的第三方模块会安装在Anaconda自己的路径下，不影响系统已安装的Python目录。
+
+
+
+# python 内建模块
 
 ## sys
 
