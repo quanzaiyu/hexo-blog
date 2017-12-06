@@ -177,12 +177,13 @@ sys.stdout.write("123456\n")
 import os
 ```
 
-> os模块主要对目录或文件操作。
+> os模块封装了操作系统的目录和文件操作，要注意这些函数有的在`os`模块中，有的在`os.path`模块中。
 
 ```python
 os.name # 返回操作系统类型，返回值是"posix"代表linux，"nt"代表windows
 os.getcwd() # 获取当前路径
 os.environ # 以字典形式返回系统变量
+os.environ.get('PATH') # 获取指定环境变量
 os.listdir(path) # 列表形式列出目录，path可选填，不填写为当前路径
 os.chdir(path) # 改变当前工作目录到指定目录
 os.mkdir(path [, mode=0777]) # 创建目录
@@ -225,7 +226,21 @@ os.path.getsize(filename) # 返回文件大小，单位字节
 os.path.join(a, *p) # 加入两个或两个以上路径，以正斜杠"/"分隔。常用于拼接路径 
 # 如: os.path.join('/home/user','test.py')，返回: '/home/user/test.py/a.py'
 os.path.split(path) # 分隔路径名
-os.path.splitext(path) 
+os.path.splitext(path) # 分割扩展名
+```
+
+### 应用
+
+列出当前目录下所有目录:
+
+```python
+[x for x in os.listdir('.') if os.path.isdir(x)]
+```
+
+列出当前目录下所有.py文件
+
+```python
+[x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1]=='.py']
 ```
 
 
@@ -310,38 +325,6 @@ platform.python_version() # 返回Python版本号
 
 
 
-## pickle和cPickle
-
-cPickle库是C语言实现，对pickle进行了优化，提升了性能，建议在写代码中使用。
-
-```python
-import pickle
-# or
-import cPickle
-```
-
-> 创建可移植的Python序列化对象，持久化存储到文件。
-
-### `dump()` 
-
-把对象保存到文件中
-
-格式：`dump(obj, file, protocol=None)`
-
-### `load()`
-
-从文件中读数据，重构为原来的Python对象
-
-格式：`load(file)`
-
-### `dumps()`
-
-返回一个pickle格式化的字符串
-
-格式：`dumps(obj, protocol=None)`
-
-
-
 ## subprocess
 
 > subprocess库会fork一个子进程去执行任务，连接到子进程的标准输入、输出、错误，并获得它们的返回代码。这个模块将取代os.system、os.spawn*、os.popen*、popen2.*和commands.*。
@@ -351,12 +334,6 @@ import cPickle
 ## Queue
 
 > 队列，数据存放在内存中，一般用于交换数据。
-
-
-
-## StringIO
-
-> StringIO库将字符串存储在内存中，像操作文件一样操作。主要提供了一个StringIO类。
 
 
 
@@ -469,12 +446,6 @@ ini文件固定结构：有多个部分块组成，每个部分有一个[标识]
 ## urllib与urllib2
 
 打开URL。urllib2是urllib的增强版，新增了一些功能，比如Request()用来修改Header信息。但是urllib2还去掉了一些好用的方法，比如urlencode()编码序列中的两个元素（元组或字典）为URL查询字符串。一般情况下这两个库结合着用。
-
-
-
-## json
-
-> JSON是一种轻量级数据交换格式，一般API返回的数据大多是JSON、XML，如果返回JSON的话，将获取的数据转换成字典，方面在程序中处理。
 
 
 
