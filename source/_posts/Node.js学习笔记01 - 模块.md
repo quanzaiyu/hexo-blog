@@ -1,5 +1,5 @@
 ---
-title: Node.js学习笔记01 - CMD规范
+title: Node.js学习笔记01 - 模块
 categories:
   - Node.js
 tags:
@@ -138,11 +138,49 @@ Console {
 
 
 
+## process
 
+`process` 代表当前Node.js进程。
 
+```js
+process.version # 当前Node版本
+process.platform # 系统[平台
+process.arch # 系统架构
+process.cwd() # 当前目录
+process.chdir('/tmp') # 切换目录
+```
 
+process.nextTick()将在下一轮事件循环中调用
 
+```js
+process.nextTick(function () {
+  console.log('nextTick callback!');
+});
+console.log('nextTick was set!');
+```
 
+```
+nextTick was set!
+nextTick callback!
+```
+
+程序即将退出时的回调函数
+
+```js
+process.on('exit', function (code) {
+  console.log('about to exit with code: ' + code);
+});
+```
+
+平台判断
+
+```js
+if (typeof(window) === 'undefined') {
+  console.log('node.js');
+} else {
+  console.log('browser');
+}
+```
 
 
 
