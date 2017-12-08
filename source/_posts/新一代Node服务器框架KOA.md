@@ -1,7 +1,7 @@
 ---
 title: 新一代Node服务器框架KOA
 categories:
-  - node
+  - Node.js
 tags:
   - KOA
 ---

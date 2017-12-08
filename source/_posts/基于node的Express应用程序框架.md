@@ -1,7 +1,7 @@
 ---
 title: 基于node的Express应用程序框架
 categories:
-  - node
+  - Node.js
 tags:
   - Express
 ---
