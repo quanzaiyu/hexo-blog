@@ -1,5 +1,5 @@
 ---
-title: 使用Sockio搭建一个聊天室
+title: 使用Socket.io搭建一个聊天室
 categories:
   - Node.js
 tags:
