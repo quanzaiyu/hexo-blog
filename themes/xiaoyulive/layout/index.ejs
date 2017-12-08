@@ -4,16 +4,25 @@
 }) %>
 <div class="container body-wrap">
     <div id="canvas-container"></div>
-    <ul class="post-list">
-    <% page.posts.each(function(post){ %>
-        <li class="post-list-item fade">
-            <%- partial('_partial/index-item', {
-                post: post,
-                index: true
-            }) %>
-        </li>
-    <% }) %>
-    </ul>
+
+    <div class="container-main-articles">
+
+        <ul class="post-list">
+            <% page.posts.each(function(post){ %>
+                <li class="post-list-item fade">
+                    <%- partial('_partial/index-item', {
+                        post: post,
+                        index: true
+                    }) %>
+                </li>
+            <% }) %>
+        </ul>
+
+        <!-- 侧边栏 -->
+        <%- partial('_partial/categories-list') %>
+
+    </div>
+
 
     <%- partial('_partial/paginator') %>
 

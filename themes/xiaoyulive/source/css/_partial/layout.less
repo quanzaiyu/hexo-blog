@@ -256,7 +256,49 @@ a[title="站长统计"] {
     }
 }
 
-@media screen and (max-width:1600px) {
+.container-main-articles {
+    display: flex;
+    h4 {
+        text-align: center;
+    }
+    .container-sidebar {
+        .container-home-category,
+        .container-home-tags {
+            padding: 1em;
+            min-height: 500px;
+            min-width: 200px;
+            margin-left: 10px;
+            border: 1px solid @borderColor;
+            position: relative;
+            z-index: 10;
+            ul {
+                list-style: none;
+            }
+        }
+        .container-home-tags {
+            margin-top: 1em;
+        }
+        @media screen and (max-width:1500px) {
+            .container-home-category,
+            .container-home-tags {
+                min-width: 180px;
+            }
+        }
+        @media screen and (max-width:1300px) {
+            .container-home-category,
+            .container-home-tags {
+                min-width: 100px;
+            }
+        }
+    }
+    @media screen and (max-width:760px) {
+        .container-sidebar {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:1700px) {
     .container {
         width: @contentWidth_2;
         padding: 20px 16px;
@@ -264,14 +306,14 @@ a[title="站长统计"] {
 }
 
 
-@media screen and (max-width:1366px) {
+@media screen and (max-width:1500px) {
     .container {
         width: @contentWidth_3;
         padding: 20px 16px;
     }
 }
 
-@media screen and (max-width:1040px) {
+@media screen and (max-width:1300px) {
     .container {
         width: 100%;
         padding: 20px 16px;
@@ -297,6 +339,12 @@ a[title="站长统计"] {
                 height: @mNavH;
                 line-height: @mNavH;
             }
+        }
+    }
+
+    .container-main-articles {
+        .post-list {
+            margin: 0 10px;
         }
     }
 
