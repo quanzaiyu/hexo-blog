@@ -265,7 +265,7 @@ a[title="站长统计"] {
         .container-home-category,
         .container-home-tags {
             padding: 1em;
-            min-height: 500px;
+            min-height: 200px;
             min-width: 200px;
             margin-left: 10px;
             border: 1px solid @borderColor;
@@ -277,6 +277,19 @@ a[title="站长统计"] {
         }
         .container-home-tags {
             margin-top: 1em;
+            padding: 0;
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                li {
+                    margin: 2px;
+                    padding: 2px 8px;
+                    border-radius: 8px;
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
         }
         @media screen and (max-width:1500px) {
             .container-home-category,

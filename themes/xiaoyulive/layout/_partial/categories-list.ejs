@@ -1,18 +1,31 @@
 <div class="container-sidebar">
     <div class="container-home-category">
       <h4>分类</h4>
-      <% site.categories.each(function (tag) { %>
-          <ul>
-              <li><a href="<%- url_for(tag.path) %>"><%-tag.name%></a></li>
-          </ul>
-      <% }) %>
+      <ul>
+        <% site.categories.each(function (tag) { %>
+            <li><a href="<%- url_for(tag.path) %>"><%-tag.name%></a></li>
+        <% }) %>
+      </ul>
     </div>
     <div class="container-home-tags">
       <h4>标签</h4>
-      <% site.tags.each(function (tag) { %>
-          <ul>
-              <li><a href="<%- url_for(tag.path) %>"><%-tag.name%></a></li>
-          </ul>
-      <% }) %>
+      <ul>
+        <% 
+        var i = 0,
+            tagColor = [];
+        tagColor.push('#8bc34a')
+        tagColor.push('#673ab7')
+        tagColor.push('#ff9800')
+        tagColor.push('#f44336')
+        tagColor.push('#00abc0')
+        tagColor.push('#2196f3')
+        site.tags.each(function (tag) { %>
+            <li
+                style="background-color: <%- tagColor[i%tagColor.length] %>;"
+            ><a href="<%- url_for(tag.path) %>"><%-tag.name%></a></li>
+        <% 
+            i ++;
+        }) %>
+      </ul>
     </div>
 </div>
