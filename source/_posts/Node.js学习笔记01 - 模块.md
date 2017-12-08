@@ -192,3 +192,8 @@ if (typeof(window) === 'undefined') {
 # 参考资料
 
 [廖雪峰官方网站: node.js](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434502419592fd80bbb0613a42118ccab9435af408fd000) 
+
+[粉丝日志: Nodejs学习路线图](http://blog.fens.me/nodejs-roadmap/) 
+
+[粉丝日志: 从零开始nodejs系列文章](http://blog.fens.me/series-nodejs/) 
+
