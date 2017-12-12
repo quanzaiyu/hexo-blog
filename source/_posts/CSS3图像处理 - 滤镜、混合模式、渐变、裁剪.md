@@ -44,7 +44,7 @@ filter: opacity(.5);
 opacity: .5; /*注意，可以和filter属性的opacity重叠，这里相当于是 .5 * .5 = .25 */
 ```
 
-<img src="http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/filter03.png" alt="">
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/filter03.png)
 
 ## 灰度 grayscale
 
@@ -326,7 +326,7 @@ background: repeating-linear-gradient(135deg, #000 0, #000 .25em, #0092b7 0, #00
 
 径向渐变方式主要由`<size>`、`<position>`、`<shape>`这三个参数影响，分别控制椭圆的圆心、形状和大小。
 
-![](http://image.zhangxinxu.com/image/blog/201711/radial-gradient-ray.png)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/radial-gradient-ray.png)
 
 其渐变范围（渐变结束线）示意如下图，默认既不是按照宽度来的，也不是按照高度来的，是按照最远边角距离作为渐变结束线的:
 
@@ -334,7 +334,7 @@ background: repeating-linear-gradient(135deg, #000 0, #000 .25em, #0092b7 0, #00
 background: radial-gradient(yellow,red);
 ```
 
-![](http://image.zhangxinxu.com/image/blog/201711/circle-gradient-end.png)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/circle-gradient-end.png)
 
 ### 指定渐变形状
 
