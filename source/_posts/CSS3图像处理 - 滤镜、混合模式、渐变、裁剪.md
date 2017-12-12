@@ -22,6 +22,8 @@ tags:
 
 # 滤镜 Filter
 
+在我的GitHub上做了一个简单的[demo](https://github.com/quanzaiyu/css3-filter-test)，用于测试filter
+
 ## 模糊 blur
 
 blur用来给图像设置高斯模糊。参数值设定高斯函数的标准差，或者是屏幕上以多少像素融在一起，这个值设置为百分比除外的css长度值，默认是0为原图，值越大越模糊，当值大于图片的宽高最大值时就什么都没了。
