@@ -277,7 +277,11 @@ img.src = 'city.jpg'; // 设置图片源地址
 - 前4个是定义图像源的切片位置和大小。
 - 后4个则是定义切片的目标显示位置和大小。
 
-![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0018.jpg) ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0020.png)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0018.jpg) 
+
+ ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0020.png)  
+
+
 
 
 
