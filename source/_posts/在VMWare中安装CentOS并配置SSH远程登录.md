@@ -5,6 +5,7 @@ categories:
 tags:
   - VMWare
   - CentOS
+  - 远程登录
 ---
 
 

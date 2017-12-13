@@ -4,6 +4,7 @@ categories:
   - 计算机
 tags:
   - VMWare
+  - OSX
 ---
 
 # 前言
