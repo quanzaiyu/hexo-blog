@@ -2,6 +2,7 @@
 title: Python学习笔记02 - 函数
 categories:
   - Python
+  - Python学习笔记
 tags:
   - Python
 ---

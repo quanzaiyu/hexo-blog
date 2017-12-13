@@ -1,7 +1,8 @@
 ---
-title: 使用Socket.io搭建一个聊天室
+title: Node.js应用篇 - 使用Socket.io搭建一个聊天室
 categories:
   - Node.js
+  - Node.js应用篇
 tags:
   - 命令行
 ---

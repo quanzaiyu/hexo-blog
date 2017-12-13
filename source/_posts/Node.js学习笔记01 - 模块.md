@@ -2,6 +2,7 @@
 title: Node.js学习笔记01 - 模块
 categories:
   - Node.js
+  - Node.js学习笔记
 tags:
   - Node.js
 ---

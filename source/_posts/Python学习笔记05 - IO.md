@@ -2,6 +2,7 @@
 title: Python学习笔记05 - IO
 categories:
   - Python
+  - Python学习笔记
 tags:
   - Python
 ---

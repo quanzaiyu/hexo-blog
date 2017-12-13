@@ -2,6 +2,7 @@
 title: Python学习笔记04 - 模块、标准库
 categories:
   - Python
+  - Python学习笔记
 tags:
   - Python
 ---

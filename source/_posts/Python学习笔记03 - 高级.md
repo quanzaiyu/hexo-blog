@@ -2,6 +2,7 @@
 title: Python学习笔记03 - 高级
 categories:
   - Python
+  - Python学习笔记
 tags:
   - Python
 ---

@@ -2,6 +2,7 @@
 title: Node.js学习笔记03 - http
 categories:
   - Node.js
+  - Node.js学习笔记
 tags:
   - Node.js
 ---

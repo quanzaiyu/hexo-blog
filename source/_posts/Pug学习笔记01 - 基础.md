@@ -2,6 +2,7 @@
 title: Pug学习笔记01 - 基础
 categories:
   - 模板引擎
+  - Pug学习笔记
 tags:
   - Pug
 ---

@@ -1,7 +1,8 @@
 ---
-title: JS中集合对象(Array、Map、Set)及类数组对象的使用与对比
+title: 深入理解JavaScript - JS中集合对象(Array、Map、Set)及类数组对象的使用与对比
 categories:
   - 前端开发
+  - 深入理解JavaScript
 tags:
   - ECMAScript
 ---

@@ -2,6 +2,7 @@
 title: Pug学习笔记03 - 混合(mixins)
 categories:
   - 模板引擎
+  - Pug学习笔记
 tags:
   - Pug
 ---

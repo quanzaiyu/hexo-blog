@@ -2,6 +2,7 @@
 title: Python学习笔记01 - 基础
 categories:
   - Python
+  - Python学习笔记
 tags:
   - Python
 ---

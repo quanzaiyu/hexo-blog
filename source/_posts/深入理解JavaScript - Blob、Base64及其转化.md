@@ -1,7 +1,8 @@
 ---
-title: 深入了解Blob、Base64及其转化
+title: 深入理解JavaScript - Blob、Base64及其转化
 categories:
   - Javascript
+  - 深入理解JavaScript
 tags:
   - Blob
   - Base64

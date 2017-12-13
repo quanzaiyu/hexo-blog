@@ -2,6 +2,7 @@
 title: Pug学习笔记04 - 文件包含与继承
 categories:
   - 模板引擎
+  - Pug学习笔记
 tags:
   - Pug
 ---

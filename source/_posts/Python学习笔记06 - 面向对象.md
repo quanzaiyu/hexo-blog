@@ -2,6 +2,7 @@
 title: Python学习笔记06 - 面向对象
 categories:
   - Python
+  - Python学习笔记
 tags:
   - Python
 ---
