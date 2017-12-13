@@ -155,3 +155,5 @@ https://github.com/socketio/socket.io
 
 [sock.io官网开发文档](https://socket.io/get-started/chat/) 
 
+[WeChat: 利用 socket.io 实现消息实时推送](https://mp.weixin.qq.com/s/554sGduixi-P3OyFW3gsoA) [相关github项目](https://github.com/noiron/socket-message-push) 
+
