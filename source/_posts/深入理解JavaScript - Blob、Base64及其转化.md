@@ -1,7 +1,7 @@
 ---
 title: 深入理解JavaScript - Blob、Base64及其转化
 categories:
-  - Javascript
+  - 前端开发
   - 深入理解JavaScript
 tags:
   - Blob
