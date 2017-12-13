@@ -74,15 +74,15 @@ ctx.stroke();
 
 二次贝塞尔曲线:
 
-![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0023.jpg) 
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0023.jpg)
 
- ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0024.jpg) 
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0024.jpg)
 
 三次贝塞尔曲线:
 
-![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0025.jpg) 
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0025.jpg)
 
- ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0026.jpg)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0026.jpg)
 
 
 
