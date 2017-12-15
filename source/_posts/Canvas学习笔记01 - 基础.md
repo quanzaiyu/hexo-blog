@@ -283,6 +283,36 @@ img.src = 'city.jpg'; // 设置图片源地址
 
 
 
+# 状态保存与恢复
+
+ `save` 和 `restore` 方法是用来保存和恢复 `canvas` 状态的，都没有参数。
+
+ `Canvas` 的状态就是当前画面应用的所有样式和变形的一个快照。
+
+1. 关于 `save()`
+
+   Canvas状态存储在栈中，每当`save()`方法被调用后，当前的状态就被推送到栈中保存(类似数组的`push()`)。一个绘画状态包括：
+
+   - 当前应用的变形（即移动，旋转和缩放）
+   - `strokeStyle`, `fillStyle`, `globalAlpha`, `lineWidth`, `lineCap`, `lineJoin`, `miterLimit`, `shadowOffsetX`, `shadowOffsetY`, `shadowBlur`, `shadowColor`, `globalCompositeOperation` 的值
+   - 当前的裁切路径（`clipping path`）
+
+2. 关于`restore()`
+
+   每一次调用 `restore` 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。(类似数组的`pop()`)
+
+```js
+ctx.fillStyle = '#f00'
+ctx.fillRect(10,10,150,150)
+ctx.save()
+
+ctx.fillStyle = '#0f0'
+ctx.fillRect(20,20,100,100)
+
+ctx.restore() # 恢复 ctx.fillStyle = '#f00' 的状态
+ctx.fillRect(30,30,50,50)
+```
+
 
 
 
