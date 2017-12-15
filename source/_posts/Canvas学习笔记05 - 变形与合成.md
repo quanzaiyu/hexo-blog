@@ -39,29 +39,71 @@ ctx.fillRect(0, 0, 100, 100)
 
 `rotate(angle)`
 
- 旋转坐标轴， 旋转的中心是坐标原点。
+ 旋转坐标轴， 旋转的中心是**坐标原点**。
 
- 这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。
+ 这个方法只接受一个参数：旋转的角度(angle)，它是**顺时针方向**的，以弧度为单位的值。
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/canvas02.jpg)
 
 ```js
-ctx.fillStyle = "red";
-ctx.save();
-
-ctx.translate(100, 100);
-ctx.rotate(Math.PI / 180 * 45);
-ctx.fillStyle = "blue";
-ctx.fillRect(0, 0, 100, 100);
-ctx.restore();
-
-ctx.save();
-ctx.translate(0, 0);
-ctx.fillRect(0, 0, 50, 50)
-ctx.restore();
-
-ctx.fillRect(50, 50, 50, 50)
+ctx.save()
+ctx.translate(100, 100)
+ctx.fillRect(0,0,50,100)
+ctx.fillStyle = '#f00'
+ctx.rotate(Math.PI/2)
+ctx.fillRect(0,0,50,100)
+ctx.fillStyle = '#0f0'
+ctx.rotate(Math.PI/2)
+ctx.fillRect(0,0,50,100)
+ctx.fillStyle = '#00f'
+ctx.rotate(Math.PI/2)
+ctx.fillRect(0,0,50,100)
+ctx.restore()
 ```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0034.png)
+
+```js
+ctx.save()
+
+ctx.translate(120, 120)
+ctx.lineWidth = 10
+
+ctx.beginPath()
+ctx.strokeStyle = '#f00'
+ctx.moveTo(20, 20)
+ctx.lineTo(100,100)
+ctx.stroke()
+ctx.closePath()
+
+ctx.rotate(Math.PI/2)
+ctx.beginPath()
+ctx.strokeStyle = '#0f0'
+ctx.moveTo(20, 20)
+ctx.lineTo(100,100)
+ctx.stroke()
+ctx.closePath()
+
+ctx.rotate(Math.PI/2)
+ctx.beginPath()
+ctx.strokeStyle = '#00f'
+ctx.moveTo(20, 20)
+ctx.lineTo(100,100)
+ctx.stroke()
+ctx.closePath()
+
+ctx.rotate(Math.PI/2)
+ctx.beginPath()
+ctx.strokeStyle = '#ff0'
+ctx.moveTo(20, 20)
+ctx.lineTo(100,100)
+ctx.stroke()
+ctx.closePath()
+
+ctx.restore()
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0035.png)
 
 
 
@@ -69,15 +111,32 @@ ctx.fillRect(50, 50, 50, 50)
 
 `scale(x, y)`
 
- 我们用它来增减图形在 `canvas` 中的像素数目，对形状，位图进行缩小或者放大。
+ 我们用它来增减图形在 `canvas` 中的像素数目，对形状，位图进行缩小或者放大，。
 
  `scale`方法接受两个参数。`x,y`分别是横轴和纵轴的缩放因子，它们都必须是正值。值比 1.0 小表示缩 小，比 1.0 大则表示放大，值为 1.0 时什么效果都没有。
 
 举例说，如果`canvas` 的 1 单位就是 1 个像素。我们设置缩放因子是 0.5，1 个单位就变成对应 0.5 个像素，这样绘制出来的形状就会是原先的一半。同理，设置为 2.0 时，1 个单位就对应变成了 2 像素，绘制的结果就是图形放大了 2 倍。
 
+```js
+ctx.save()
+
+ctx.translate(120, 120)
+
+ctx.strokeStyle = '#f00'
+ctx.strokeRect(0,0,50,100)
+
+ctx.scale(.5, .5)
+ctx.fillStyle = '#0f0'
+ctx.fillRect(0,0,50,100)
+
+ctx.restore()
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0036.png)
 
 
-# Transforms
+
+# transforms
 
 transforms 直接对变形矩阵作修改。
 
