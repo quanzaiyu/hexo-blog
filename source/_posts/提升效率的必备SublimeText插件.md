@@ -54,13 +54,13 @@ Ctrl + Shift + P
 
 ​	选中要进行分析的css代码，`ctrl`+`shift`+`P`,输入Autoprefixer CSS即可
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0052.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0052.gif)
 
 ### <u>Emmet</u>
 
 Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0053.jpg)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0053.jpg)
 
 
 
@@ -80,7 +80,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 　　增强右键菜单文件操作功能
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0055.png)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0055.png)
 
 
 
@@ -92,7 +92,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ### <u>Color Highlighter</u>
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0056.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0056.gif)
 
 
 
@@ -100,7 +100,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ### <u>Pretty JSON</u>
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0057.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0057.gif)
 
 ### <u>HTML-CSS-JS Prettify</u>
 
@@ -304,7 +304,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ### CSS Comments
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0058.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0058.gif)
 
 ### CSS Format
 
@@ -316,13 +316,19 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ​	DocBlockr 可以使你很方便地对代码建立文档。它会解析函数，变量，和参数，根据它们自动生成文档范式，你的工作就是去填充对应的说明。
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0059.gif)![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0060.gif)![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0061.gif)![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0062.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0059.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0060.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0061.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0062.gif)
 
 ### JavaScript Completions
 
 　　js最基本的api快查片段
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0063.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0063.gif)
 
 ### JsFormat
 
@@ -332,7 +338,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 　　快速查找所有插件的快捷键
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0064.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0064.gif)
 
 ### LiveStyle
 
@@ -340,7 +346,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 　　你本地css文件可以和浏览器的css文件映射，同步到本地，但是必须在chrome上运行，chrome必须安装相应的插件
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0065.png)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0065.png)
 
 
 
@@ -370,7 +376,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 　　如果觉得行间距太小，可以往上找下，有个class:"sidebartree"，调一下里边的rowpadding配置即可。
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0066.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0066.gif)
 
 ### Themr
 
@@ -378,49 +384,49 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ### Git
 
-![13. Git](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0067.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0067.gif)
 
 虽然名字看上去并不友好，但作为开发者的你肯定一眼就能明白它是干什么的。这个插件会将Git整合进你的SublimeText，使的你可以在SublimeText中运行Git命令，包括添加，提交文件，查看日志，文件注解以及其它Git功能。
 
 ### Terminal
 
-![12. Terminal](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0068.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0068.gif)
 
 这个插件可以让你在Sublime中直接使用终端打开你的项目文件夹，并支持使用快捷键。
 
 ### CSSComb
 
-![11. CSSComb](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0069.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0069.gif)
 
 这是用来给CSS属性进行排序的格式化插件。如果你想保持的代码干净整洁，并且希望按一定的顺序排列（是不是有点强迫症了？），那么这个插件是一种有效解决的方案。特别是当你和其他有自己代码编写风格的开发者一同协作的时候。
 
 ### Trmmer
 
-![8. Trmmer](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0070.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0070.gif)
 
 你知道当你编写代码时，由于错误或别的某些原因，会产生一些不必要的空格。需要注意的是多余的空格有时也会造成错误。这个插件会自动删除这些不必要的空格。
 
 ### ColorPicker
 
-![7. ColorPicker](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0071.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0071.gif)
 
 如果你经常要查看或设置颜色值，这个插件可以很方便地调用你本机的调色板应用。（译者扩充：）这是一个双向的功能，你既可以在调色板中选择一个颜色，然后按“确定”按钮把该值填写到 SublimeText 中活动文档的当前位置，也可以在活动文档中选择一个颜色的值，按此插件的快捷键就会在显示的调色板中定位到该值所对应的颜色。
 
 ### MarkDown Editing
 
-![6. MarkDown Editing](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0072.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0072.gif)
 
 SublimeText不仅仅是能够查看和编辑 Markdown 文件，但它会视它们为格式很糟糕的纯文本。这个插件通过适当的颜色高亮和其它功能来更好地完成这些任务。
 
 ### FileDiffs
 
-![5. FileDiffs](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0073.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0073.gif)
 
 这个插件允许你看到SublimeText中两个不同文件的差异。你可以比较的对象可以是从剪贴板中复制的数据，或工程中的文件，当前打开的文件等。
 
 ### CanIUse
 
-![10. CanIUse](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0074.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0074.gif)
 
 如果您想检查浏览器是否支持你包括在你的代码中的CSS和HTML元素，那么这是你需要的插件。所有您需要做的就是选择有疑问的元素，插件将为你做其余的事情。
 
@@ -430,7 +436,7 @@ SASS Build 是一个编写CSS的预处理器。这个特别的插件将帮助你
 
 ### FTPSync
 
-![FTPSync](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0075.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0075.gif)
 
 默认情况下SublimeText不具备FTP的功能，如果你正在寻找能在您的SublimeText应用程序中使用的免费和易用的FTP工具，你可以考虑FTPSync。这是一个非常简单的FTP同步工具，它可以控制上传目标的多重命名。让我们知道您的想法。
 
@@ -464,7 +470,7 @@ SublimeLinter-jsx
 
 它允许您在Sublime Text中立即更改当前的颜色方案。
 
-![img](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0076.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0076.gif)
 
 Lyte、Boxy Theme
 
