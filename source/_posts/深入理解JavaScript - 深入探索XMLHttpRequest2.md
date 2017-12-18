@@ -427,6 +427,10 @@ xhr.onload = function() {
 
 可以使用`Blob`构造函数将`arraybuffer`的数据转化为`Blob`，注意得加上中括号`[]`。
 
+注意：
+
+以前有一个BlobBuilder对象，用于处理将ArrayBuffer转化为Blob格式，不过我测试的时候所有浏览器都报错，查了下MDN发现此对象已经废弃。所以开发的时候最好还是看W3C文档或者MDN，有助于了解API的实时更新。
+
 
 
 ### 类型化数组
