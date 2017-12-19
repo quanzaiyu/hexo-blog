@@ -38,15 +38,15 @@ Ctrl + Shift + P
 
 ## 代码提示与自动完成
 
-### <u>All Autocomplete</u>
+### [All Autocomplete](https://packagecontrol.io/packages/All%20Autocomplete) 
 
 　　Sublime Text 默认的 Autocomplete 功能只考虑当前的文件，而 AllAutocomplete 插件会搜索所有打开的文件来寻找匹配的提示词。
 
-### <u>AutoFileName</u>
+### [AutoFileName](https://packagecontrol.io/packages/AutoFileName) 
 
-　　快速帮助你在文件中写路径
+　　快速在文件中写路径，如`img`标签的`src`。 
 
-### <u>Autoprefixer</u>
+### [Autoprefixer](https://packagecontrol.io/packages/Autoprefixer) 
 
 　　这个插件主要应用css的浏览器兼容书写，自动分析你的css文件，解析出新的css文件，可以配置你要兼容的浏览器，不过这个插件要在之前安装nodejs
 
@@ -54,55 +54,59 @@ Ctrl + Shift + P
 
 ​	选中要进行分析的css代码，`ctrl`+`shift`+`P`,输入Autoprefixer CSS即可
 
-![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0052.gif)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/sublime/001.gif)
 
-### <u>Emmet</u>
 
-Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度
-
-![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0053.jpg)
 
 
 
 ## 功能增强
 
-### <u>Sublime Server</u>
+### [SublimeServer](https://packagecontrol.io/packages/SublimeServer) 
 
 使用sublime开启一个本地服务器，右键可以看到View in sublime server
 
-### <u>CSSREM</u>
+### [rem-unit](https://packagecontrol.io/packages/rem-unit) 
 
 一个CSS的px值转rem值的Sublime Text 3自动完成插件。
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0054.gif)
 
-### <u>SideBarEnhancements</u>
+### [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements) 
 
 　　增强右键菜单文件操作功能
 
-![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0055.png)
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/sublime/002.png)
 
 
 
 ## 视觉体验
 
-### <u>BracketHighlighter</u>
+### [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter) 
 
 　　配置文件的高亮设置，让你的代码有不同的颜色区分该插件提供配对标签，或大括号或字符引号的配对高亮显示，算是对系统高亮的加强吧。 
 
-### <u>Color Highlighter</u>
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/sublime/003.png)
+
+### [Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/sublime/004.png)
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0056.gif)
+
+Color Picker，使用快捷键`Ctrl + Shift + C` 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/sublime/005.gif)
 
 
 
 ## 代码格式化
 
-### <u>Pretty JSON</u>
+### [Pretty JSON](https://packagecontrol.io/packages/Pretty%20JSON) 
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0057.gif)
 
-### <u>HTML-CSS-JS Prettify</u>
+### [HTML-CSS-JS Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify) 
 
 　　全能序列化，需要指定Nodejs路径
 
@@ -151,13 +155,9 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 }]
 ```
 
-### jsformat
+### [DeleteBlankLines](https://packagecontrol.io/packages/DeleteBlankLines) 
 
-​	`jsformat`是sublime上js格式化比较好用的插件之一，通过修改它的`e4x`属性可以使它支持`jsx`。
-
-### DeleteBlankLines
-
-删除空白
+删除空白行
 
 操作步骤：
 
@@ -169,11 +169,11 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ## 语言包
 
-### <u>ChineseLocalization</u>
+### [ChineseLocalization](https://packagecontrol.io/packages/ChineseLocalizations) 
 
 　　各国语言包
 
-### <u>GBK Support</u>
+### [GBK Support](https://packagecontrol.io/packages/GBK%20Support) 
 
 ​	支持GBK编码格式
 
@@ -195,10 +195,9 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ​	该插件不需要额外配置，在打开`.js`或`.jsx`后缀的文件，直接选择`Babel`为对应的语法就可以了。
 
-#### Emmet
+#### [Emmet](https://packagecontrol.io/packages/Emmet) 
 
-​	可以自动扩展react的className，这点不要太爽～
-​	我们要做的，只是安装好它之后稍微做下配置修改，就可以愉快的开撸了。
+​	Emmet的前身是大名鼎鼎的Zen coding，它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。还可以自动扩展react的className，我们要做的，只是安装好它之后稍微做下配置修改，就可以愉快的开撸了。
 
 ​	**安装**
 
@@ -208,7 +207,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ​	打开菜单`Preferences` -> `Package Settings` -> `Emmet` -> `Key Bindings - User`
 
-​	将下面代码贴进去保存。更详细的规则可以参考[emmet-sublime文档](https://github.com/sergeche/emmet-sublime#how-to-expand-abbreviations-with-tab-in-other-syntaxes)
+​	将下面代码贴进去保存。更详细的规则可以参考 [emmet-sublime文档](https://github.com/sergeche/emmet-sublime#how-to-expand-abbreviations-with-tab-in-other-syntaxes) 
 
 ```json
 [{
@@ -257,7 +256,7 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 }]
 ```
 
-#### jsformat
+#### [jsformat](https://packagecontrol.io/packages/JsFormat) 
 
 ​	`jsformat`是sublime上js格式化比较好用的插件之一，通过修改它的`e4x`属性可以使它支持`jsx`。
 
@@ -330,10 +329,6 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0063.gif)
 
-### JsFormat
-
-　　js序列化，能排在下载插件前25位，好的话就不用说了
-
 ### Keymaps
 
 　　快速查找所有插件的快捷键
@@ -405,12 +400,6 @@ Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的�
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0070.gif)
 
 你知道当你编写代码时，由于错误或别的某些原因，会产生一些不必要的空格。需要注意的是多余的空格有时也会造成错误。这个插件会自动删除这些不必要的空格。
-
-### ColorPicker
-
-![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0071.gif)
-
-如果你经常要查看或设置颜色值，这个插件可以很方便地调用你本机的调色板应用。（译者扩充：）这是一个双向的功能，你既可以在调色板中选择一个颜色，然后按“确定”按钮把该值填写到 SublimeText 中活动文档的当前位置，也可以在活动文档中选择一个颜色的值，按此插件的快捷键就会在显示的调色板中定位到该值所对应的颜色。
 
 ### MarkDown Editing
 
