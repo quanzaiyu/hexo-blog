@@ -11,6 +11,8 @@ tags:
 
 ## [TODO+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-todo-plus)  
 
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/020.png)
+
 >  创建一个`TODO`列表问题件
 
 **安装**  `ext install vscode-todo-plus` 
@@ -55,7 +57,9 @@ Todo:
 
 
 
-## [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) 
+## [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)  
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/021.png)
 
 **快捷键**
 
@@ -92,7 +96,9 @@ Bookmarks (Selection): Shrink Selection
 
 
 
-## [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) 
+## [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)  
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/022.gif)
 
 > 可以方便的编辑Markdown文件
 
@@ -122,7 +128,7 @@ Alt + C # 选中/取消 任务列表
 
 ## 代码高亮与语言支持
 
-### [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)  
+### [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)   
 
 > 提供对Vue的支持，资料:  [Vetur Doc - GitBook](https://vuejs.github.io/vetur/)
 
@@ -159,9 +165,13 @@ import * as _ from 'lodash'
 // 使用 _. 就可以得到 lodash 代码提示
 ```
 
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/016.png)
 
 
-### [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) 
+
+### [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)  
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/023.png)
 
 **高亮关键字**
 
@@ -195,9 +205,11 @@ List hilighted annotations
 
 
 
-### [vue-ls](https://marketplace.visualstudio.com/items?itemName=vaniship.vue-ls)  
+### [vue-ls](https://marketplace.visualstudio.com/items?itemName=vaniship.vue-ls)   
 
 > 这个扩展为 VSCode 增加了 vue 语言服务，解决 vue 单文件组件(.vue)文件的语法识别问题。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/024.gif)
 
 **.vuelsrc文件配置**
 
@@ -221,6 +233,14 @@ module.exports = {
 
 
 
+### [HTML CSS Support ](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) 
+
+让 html 标签上写class 智能提示当前项目所支持的样式，新版已经支持scss文件检索。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/027.jpg)
+
+
+
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 
 
 
@@ -232,16 +252,53 @@ module.exports = {
 
 
 - [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) 提供TypeScript代码验证
-- [stylelint](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets) css/less/scss验证
-- [puglint](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-puglint) 
+
+
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) 
 - [jshint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint) 
-- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) 拼写检查
 
 
 
 
-## 代码提示
+### [stylelint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint) 
+
+> css/less/scss验证
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/033.png)
+
+
+
+### [puglint](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-puglint) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/032.png)
+
+
+
+### [HTMLHint](https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/026.png)
+
+
+
+### [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/025.gif)
+
+
+
+## 代码提示与自动完成
+
+- [Vue Snippets(vue-ls)](https://marketplace.visualstudio.com/items?itemName=vaniship.vue-ls-snippets) 
+
+
+- [Vue 2 Snippets](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets) 
+- [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) 
+- [Modern (ES6+) Javascript Snippets](https://marketplace.visualstudio.com/items?itemName=tunnckocore.modern-javascript-snippets) 
+- [Bootstrap 3 Snippets](https://marketplace.visualstudio.com/items?itemName=wcwhitehead.bootstrap-3-snippets) 
+- [Bootstrap 4 & Font awesome snippets](https://marketplace.visualstudio.com/items?itemName=thekalinga.bootstrap4-vscode) 
+
+
+
 
 ### [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets) 
 
@@ -268,31 +325,122 @@ Nuxt
 
 
 
-- [Vue Snippets(vue-ls)](https://marketplace.visualstudio.com/items?itemName=vaniship.vue-ls-snippets) 
+### [VueHelper](https://marketplace.visualstudio.com/items?itemName=oysun.vuehelper) 
+
+**Snippets** and more feature
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/017.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/018.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/019.gif)
 
 
-- [Vue 2 Snippets](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets) 
-- [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) 
-- [Modern (ES6+) Javascript Snippets](https://marketplace.visualstudio.com/items?itemName=tunnckocore.modern-javascript-snippets) 
-- [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) 
 
+### [fileheader](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader) 
+
+添加文件头，包括用户名、更新日期，使用`Ctrl + Alt + I`进行标记。
+
+配置文件:
+
+```json
+{
+  "fileheader.Author": "tom",
+  "fileheader.LastModifiedBy": "jerry"
+}
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/007.gif)
+
+
+
+### [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis) 
+
+为`js`和`ts`添加`JSDoc`风格的注释，使用`Ctrl + Alt + D + D` 激活。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/004.gif)
+
+
+
+### [jQuery Code Snippets](https://marketplace.visualstudio.com/items?itemName=donjayamanne.jquerysnippets) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/028.png)
+
+
+
+### [Easy LESS](https://marketplace.visualstudio.com/items?itemName=mrcrowl.easy-less) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/037.gif)
+
+
+
+### [:emojisense:](https://marketplace.visualstudio.com/items?itemName=bierner.emojisense) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/039.gif)
+
+常用配置:
+
+```json
+"emojisense.languages": {
+    "markdown": true,
+    "git-commit": false,
+    "plaintext": false,
+    "json": true
+}
+```
+
+
+
+### [Emoji](https://marketplace.visualstudio.com/items?itemName=Perkovec.emoji)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/040.gif)
 
 
 
 ## 智能感知
 
-- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) 
 - [Less IntelliSense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-less) 
-- [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense) 
-- [PHP IntelliSense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense) 
-- [IntelliSense for CSS class names](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) 
 
+- [PHP IntelliSense](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense) 
+
+  ​
+
+
+### [IntelliSense for CSS class names](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) 
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/034.gif)
+
+
+
+### [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) 
+
+> 自动路劲补全
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/029.gif)
+
+
+
+### [Npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense) 
+
+> require 时的包提示（最新版的vscode已经集成此功能）
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/030.gif)
+
+
+
+### [Atuo Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) 
+
+> 自动完成标签名修改匹配
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/001.gif)
 
 
 
 ## 代码美化
 
-### [Pug beautify](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-puglint) 
+### [Pug beautify](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-pugbeautify)  
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/031.gif)
 
 **常用命令**
 
@@ -357,7 +505,7 @@ Formatter Create Local Config
 
 
 
-### [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) 
+### [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)  
 
 **keybindings.json 配置**
 
@@ -406,7 +554,7 @@ Formatter Create Local Config
 
 ## 模板预览
 
-- [Pug to HTML](https://marketplace.visualstudio.com/items?itemName=ginie.pug2html) 
+### [Pug to HTML](https://marketplace.visualstudio.com/items?itemName=ginie.pug2html) 
 
 **常用命令**
 
@@ -414,7 +562,9 @@ Formatter Create Local Config
 pug2html
 ```
 
-- [Preview](https://marketplace.visualstudio.com/items?itemName=ginie.pug2html) 
+
+
+### [Preview](https://marketplace.visualstudio.com/items?itemName=ginie.pug2html) 
 
 > A previewer of Markdown, ReStructured Text, HTML, Jade, Pug, Mermaid files, Image's URI or CSS properties for Visual Studio Code.
 
@@ -429,12 +579,28 @@ pug2html
 
 
 
-## 界面主题
+## 界面主题、图标与颜色
 
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 
+- [Material Theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 
 - [Easy icon theme](https://marketplace.visualstudio.com/items?itemName=jamesmaj.easy-icons) 
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons) 
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings) 
+- [Dracula](https://marketplace.visualstudio.com/items?itemName=oysun.vuehelper) [官网](https://draculatheme.com/visual-studio-code/) 
+- [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) 
+- [One Monokai Theme](https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai) 
+- [Darcula](https://marketplace.visualstudio.com/items?itemName=rokoroku.vscode-theme-darcula) 
+
+
+
+
+### [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer) 
+
+让控制台输出增添色彩。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/010.jpg)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/011.jpg)
+
 
 
 
@@ -448,6 +614,95 @@ pug2html
 
 
 
+## 括号匹配
+
+### [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) 
+
+让括号拥有独立的颜色，易于区分。可以配合任意主题使用。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/009.png)
+
+
+
+### [Subtle Brackets](https://segmentfault.com/a/1190000006697219) 
+
+为括号匹配增加样式。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/012.png)
+
+配置文件:
+
+```json
+"subtleBrackets.styles": {
+    "global": {
+        "borderWidth": "1px",
+        "borderStyle": "none none solid none"
+    },
+    "[]": { 
+        "color": "white",
+        "backgroundColor": "red",
+        "borderStyle": "none"
+    }
+}
+```
+
+
+
+### [bracket-jumper](https://marketplace.visualstudio.com/items?itemName=sashaweiss.bracket-jumper) 
+
+在匹配的括号之间跳转。
+
+快捷键:
+
+```
+bracket-jumper.jumpLeft:    { Mac: ctrl+left, Windows/Linux: ctrl+alt+left }
+bracket-jumper.jumpRight:   { Mac: ctrl+right, Windows/Linux: ctrl+alt+right }
+bracket-jumper.selectLeft:  { Mac: ctrl+shift+left, Windows/Linux: ctrl+alt+shift+left }
+bracket-jumper.selectRight: { Mac: ctrl+shift+right, Windows/Linux: ctrl+alt+shift+right }
+bracket-jumper.ascendLeft:        { Mac: ctrl+up, Windows/Linux: ctrl+alt+up }
+bracket-jumper.ascendRight:       { Mac: ctrl+down, Windows/Linux: ctrl+alt+down }
+bracket-jumper.selectAscendLeft:  { Mac: ctrl+shift+up, Windows/Linux: ctrl+alt+shift+up }
+bracket-jumper.selectAscendRight: { Mac: ctrl+shift+down, Windows/Linux: ctrl+alt+shift+down }
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/013.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/014.gif)
+
+
+
+### [Bracket Selection](https://marketplace.visualstudio.com/items?itemName=guosong.bracketselection) 
+
+选择匹配括号之间的内容。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/015.gif)
+
+
+
+## 版本控制
+
+### [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) 
+
+丰富的git日志插件。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/005.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/006.png)
+
+
+
+## 项目管理
+
+### [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) 
+
+在多个项目之前快速切换的工具。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/003.png)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/002.gif)
+
+
+
 ## 其他
 
 - [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug) 
@@ -457,4 +712,43 @@ pug2html
 - [VSNotes](https://marketplace.visualstudio.com/items?itemName=patricklee.vsnotes) 
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) 标签自动闭合
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) 代码运行
-- [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) 
+
+
+
+### [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis) 
+
+为`js`和`ts`添加`JSDoc`风格的注释，使用`Ctrl + Alt + D + D` 激活。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/004.gif)
+
+
+
+### [filesize](https://marketplace.visualstudio.com/items?itemName=zh9528.file-size) 
+
+在状态栏显示文件大小，点击后还可以看到详细创建、修改时间。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/008.png)
+
+
+
+### [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) 
+
+让 vscode 映射 chrome 的 debug功能，静态页面都可以用 vscode 来打断点调试。
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/038.png)
+
+
+
+### [px2rem](https://marketplace.visualstudio.com/items?itemName=arturiapendragon.px2rem) 
+
+一个CSS值转REM的VSCode插件
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/035.gif)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/036.gif)
+
+
+
+# 参考资料
+
+[vscode 插件推荐 - 献给所有前端工程师（2017.8.18更新）](https://segmentfault.com/a/1190000006697219) 
