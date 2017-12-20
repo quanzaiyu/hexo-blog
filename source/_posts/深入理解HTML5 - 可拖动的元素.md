@@ -9,74 +9,192 @@ tags:
 
 
 
-示例代码:
+# 拖动
+
+## 拖拽和释放
+
+拖拽(`Drag`)指的是鼠标点击源对象后一直移动对象不松手，一但松手即释放(`Drop`)了
+
+
+
+## 源对象与目标对象
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0077.png)
+
+源对象：指的是我们鼠标点击的一个事物，这里可以是一张图片，一个DIV，一段文本等等。
+
+目标对象：指的是我们拖动源对象后移动到一块区域，源对象可以进入这个区域，可以在这个区域上方悬停(未松手)，可以释松手释放将源对象放置此处(已松手)，也可以悬停后离开该区域。
+
+
+
+# 拖拽API
+
+## 被拖动的源对象可以触发的事件
+
+1. `ondragstart`：源对象开始被拖动
+2. `ondrag`：源对象被拖动过程中(鼠标可能在移动也可能未移动)
+3. `ondragend`：源对象被拖动结束
+
+## 拖动源对象可以进入到上方的目标对象可以触发的事件
+
+1. `ondragenter`：目标对象被源对象拖动着进入
+2. `ondragover`：目标对象被源对象拖动着悬停在上方
+3. `ondragleave`：源对象拖动着离开了目标对象
+4. `ondrop`：源对象拖动着在目标对象上方释放/松手
+
+## 传递数据
+
+HTML5为所有的拖动相关事件提供了一个新的属性：
+
+`e.dataTransfer` 
+
+  功能：数据传递对象，用于在源对象和目标对象的事件间传递数据
+
+### 源对象上的事件处理中保存数据
+
+`e.dataTransfer.setData(k,  v);`     // k-v必须都是string类型
+
+### 目标对象上的事件处理中读取数据
+
+`var v = e.dataTransfer.getData(k);`
+
+
+
+# 案例
+
+## 在几个盒子之间拖动元素
 
 ```html
 <!DOCTYPE html>
-<html class="no-js">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>HTML5-draggable(拖放)</title>
-  <style type="text/css">
-    #div1,
-    #div2 {
-      float: left;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px dashed #f00;
+      position: relative;
+    }
+    .target {
       width: 100px;
-      height: 35px;
-      margin: 10px;
-      padding: 10px;
-      border: 1px solid #aaaaaa;
+      height: 100px;
+      background: #000;
+      position: absolute;
+      left: 1em;
+      top: 1em;
     }
   </style>
-  <script type="text/javascript">
-    /*
-     * 虽然已经设定了img元素可被拖动，但是浏览器默认地，无法将数据/元素放置到其他元素中。
-     * 如果有需要设置某些元素可接受被拖动元素，则要阻止它的默认行为，
-     * 这要通过设置该接收元素的ondragover 事件，调用event.preventDefault() 方法
-     */
-    function allowDrop(ev) {
-      ev.preventDefault(); //阻止默认行为
-
-      //ev.target.id
-      //此处ev.target是接收元素，通过事件被绑定在哪个元素即可区分
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="target" id="target" draggable="true"></div>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <script>
+    let boxEles = document.querySelectorAll('.box');
+    for (let box of boxEles) {
+      box.ondrop = function (ev) {
+        console.log('源对象拖动着在目标对象上方释放/松手')
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("DIV");
+        ev.target.appendChild(document.getElementById(data));
+      }
+      box.ondragenter = function (ev) {
+        console.log('目标对象被源对象拖动着进入')
+      }
+      box.ondragleave = function (ev) {
+        console.log('源对象拖动着离开了目标对象')
+      }
+      box.ondragover = function (ev) {
+        console.log('目标对象被源对象拖动着悬停在上方')
+        ev.preventDefault();
+      }
     }
 
-    /*
-     * 当该img元素被拖动时，会触发一个ondragstart 事件，该事件调用了一个方法drag(event)。
-     */
-    function drag(ev) {
-      //ev.dataTransfer.setData() 方法设置被拖数据的数据类型（Text）和值（被拖元素id），
-      //该方法将被拖动元素的id存储到事件的dataTransfer对象内，ev.dataTransfer.getData()可将该元素取出。
-      //此处ev.target是被拖动元素
-      ev.dataTransfer.setData("Text", ev.target.id);
+    target.ondragstart = function(e) {
+      console.log('事件源p3开始拖动');
+      e.dataTransfer.setData("DIV", e.target.id);
     }
-
-    /*
-     * 当被拖元素移动到接收元素，
-     * 松开鼠标时（即被拖元素放置在接收元素内时）会出发ondrop事件
-     */
-    function drop(ev) {
-      ev.preventDefault(); //阻止默认行为
-      var data = ev.dataTransfer.getData("Text"); //将被拖动元素id取出
-      ev.target.appendChild(document.getElementById(data)); //将被拖动元素添加到接收元素尾部
+    target.ondrag = function(e) {
+      console.log('事件源p3拖动中');
+    }
+    target.ondragend = function() {
+      console.log('源对象p3拖动结束');
     }
   </script>
-</head>
-
-<body>
-
-  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <!--为了使元素可拖动，把 draggable 属性设置为 true-->
-    <img src="http://www.w3school.com.cn/i/w3school_logo_black.gif" draggable="true" ondragstart="drag(event)" id="drag1" />
-  </div>
-
-  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
 </body>
-
 </html>
 ```
+
+
+
+## 在页面中拖动元素
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      position: relative;
+    }
+    .target {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background: #000;
+    }
+  </style>
+</head>
+<body class="container">
+  <div class="target" id="target" draggable="true"></div>
+  <script>
+    target.ondragstart = function (e) {
+      // 记录拖动前的坐标
+      offsetX = e.offsetX;
+      offsetY = e.offsetY;
+    }
+    target.ondrag = function (e) {
+      // 获取拖动源在页面中的位置
+      var x = e.pageX;
+      var y = e.pageY;
+      console.log(x + '-' + y);
+      if (x == 0 && y == 0) {
+        return; // 不处理拖动最后一刻X和Y都为0的情形
+      }
+      x -= offsetX;
+      y -= offsetY;
+      // 更新拖动源的位置
+      target.style.left = x + 'px';
+      target.style.top = y + 'px';
+    }
+    target.ondragend = function () {
+      console.log('源对象p3拖动结束');
+    }
+  </script>
+</body>
+</html>
+```
+
+
 
 
 
@@ -85,3 +203,5 @@ tags:
 [HTML5-draggable(拖放)](http://www.cnblogs.com/blog-leo/p/4457697.html) 
 
 [HTML5 drag & drop 拖拽与拖放简介](http://www.zhangxinxu.com/wordpress/2011/02/html5-drag-drop-%E6%8B%96%E6%8B%BD%E4%B8%8E%E6%8B%96%E6%94%BE%E7%AE%80%E4%BB%8B/) 
+
+[HTML5--拖拽API(含超经典例子)](http://blog.csdn.net/baidu_25343343/article/details/53215193) 
