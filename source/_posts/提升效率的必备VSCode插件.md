@@ -167,6 +167,10 @@ import * as _ from 'lodash'
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/vscode/016.png)
 
+### [Weex](https://marketplace.visualstudio.com/items?itemName=jaylinwang.weex) 
+
+提供 `vuejs` (.vue)、`weex` (.we) 的语言支持， [Weex官网地址](http://weex.apache.org/cn/guide/) 。
+
 
 
 ### [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)  
