@@ -38,15 +38,15 @@ Ctrl + Shift + P
 
 ## 代码提示与自动完成
 
-### [All Autocomplete](https://packagecontrol.io/packages/All%20Autocomplete) 
+### [<u>All Autocomplete</u>](https://packagecontrol.io/packages/All%20Autocomplete) 
 
 　　Sublime Text 默认的 Autocomplete 功能只考虑当前的文件，而 AllAutocomplete 插件会搜索所有打开的文件来寻找匹配的提示词。
 
-### [AutoFileName](https://packagecontrol.io/packages/AutoFileName) 
+### [<u>AutoFileName</u>](https://packagecontrol.io/packages/AutoFileName) 
 
 　　快速在文件中写路径，如`img`标签的`src`。 
 
-### [Autoprefixer](https://packagecontrol.io/packages/Autoprefixer) 
+### [<u>Autoprefixer</u>](https://packagecontrol.io/packages/Autoprefixer) 
 
 　　这个插件主要应用css的浏览器兼容书写，自动分析你的css文件，解析出新的css文件，可以配置你要兼容的浏览器，不过这个插件要在之前安装nodejs
 
@@ -62,17 +62,17 @@ Ctrl + Shift + P
 
 ## 功能增强
 
-### [SublimeServer](https://packagecontrol.io/packages/SublimeServer) 
+### [<u>SublimeServer</u>](https://packagecontrol.io/packages/SublimeServer) 
 
 使用sublime开启一个本地服务器，右键可以看到View in sublime server
 
-### [rem-unit](https://packagecontrol.io/packages/rem-unit) 
+### [<u>rem-unit</u>](https://packagecontrol.io/packages/rem-unit) 
 
 一个CSS的px值转rem值的Sublime Text 3自动完成插件。
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0054.gif)
 
-### [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements) 
+### [<u>SideBarEnhancements</u>](https://packagecontrol.io/packages/SideBarEnhancements) 
 
 　　增强右键菜单文件操作功能
 
@@ -82,13 +82,13 @@ Ctrl + Shift + P
 
 ## 视觉体验
 
-### [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter) 
+### [<u>BracketHighlighter</u>](https://packagecontrol.io/packages/BracketHighlighter) 
 
 　　配置文件的高亮设置，让你的代码有不同的颜色区分该插件提供配对标签，或大括号或字符引号的配对高亮显示，算是对系统高亮的加强吧。 
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/sublime/003.png)
 
-### [Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter) 
+### [<u>Color Highlighter</u>](https://packagecontrol.io/packages/Color%20Highlighter) 
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/sublime/004.png)
 
@@ -102,11 +102,11 @@ Color Picker，使用快捷键`Ctrl + Shift + C`
 
 ## 代码格式化
 
-### [Pretty JSON](https://packagecontrol.io/packages/Pretty%20JSON) 
+### [<u>Pretty JSON</u>](https://packagecontrol.io/packages/Pretty%20JSON) 
 
 ![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0057.gif)
 
-### [HTML-CSS-JS Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify) 
+### [<u>HTML-CSS-JS Prettify</u>](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify) 
 
 　　全能序列化，需要指定Nodejs路径
 
@@ -155,7 +155,7 @@ Color Picker，使用快捷键`Ctrl + Shift + C`
 }]
 ```
 
-### [DeleteBlankLines](https://packagecontrol.io/packages/DeleteBlankLines) 
+### [<u>DeleteBlankLines</u>](https://packagecontrol.io/packages/DeleteBlankLines) 
 
 删除空白行
 
@@ -169,11 +169,11 @@ Color Picker，使用快捷键`Ctrl + Shift + C`
 
 ## 语言包
 
-### [ChineseLocalization](https://packagecontrol.io/packages/ChineseLocalizations) 
+### [<u>ChineseLocalization</u>](https://packagecontrol.io/packages/ChineseLocalizations) 
 
 　　各国语言包
 
-### [GBK Support](https://packagecontrol.io/packages/GBK%20Support) 
+### [<u>GBK Support</u>](https://packagecontrol.io/packages/GBK%20Support) 
 
 ​	支持GBK编码格式
 
@@ -195,7 +195,7 @@ Color Picker，使用快捷键`Ctrl + Shift + C`
 
 ​	该插件不需要额外配置，在打开`.js`或`.jsx`后缀的文件，直接选择`Babel`为对应的语法就可以了。
 
-#### [Emmet](https://packagecontrol.io/packages/Emmet) 
+#### [<u>Emmet</u>](https://packagecontrol.io/packages/Emmet) 
 
 ​	Emmet的前身是大名鼎鼎的Zen coding，它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。还可以自动扩展react的className，我们要做的，只是安装好它之后稍微做下配置修改，就可以愉快的开撸了。
 
@@ -256,7 +256,7 @@ Color Picker，使用快捷键`Ctrl + Shift + C`
 }]
 ```
 
-#### [jsformat](https://packagecontrol.io/packages/JsFormat) 
+#### [<u>jsformat</u>](https://packagecontrol.io/packages/JsFormat) 
 
 ​	`jsformat`是sublime上js格式化比较好用的插件之一，通过修改它的`e4x`属性可以使它支持`jsx`。
 
@@ -284,7 +284,7 @@ Color Picker，使用快捷键`Ctrl + Shift + C`
 
 ## 其他
 
-### <u>SublimeCodeIntel</u>
+### SublimeCodeIntel
 
 　　一个全功能的 Sublime Text 代码自动完成引擎
 
@@ -455,7 +455,7 @@ SublimeLinter-jsx
 
 拥有不同的主题可以触发创意和想法，你可能想使用这些插件来实现不同的主题，带来更好的和令人兴奋的前景。
 
-### [Colorsublime](https://packagecontrol.io/packages/Colorsublime)
+### <u>[Colorsublime](https://packagecontrol.io/packages/Colorsublime)</u>
 
 它允许您在Sublime Text中立即更改当前的颜色方案。
 
