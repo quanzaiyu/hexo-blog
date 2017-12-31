@@ -12,7 +12,7 @@ tags:
 
 
 <div style='text-align: center;'>
-<a href='https://www.kancloud.cn/xiaoyulive/learn'>
+<a href='https://http://book.canvas.xiaoyulive.top'>
   <img src='http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/canvas/canvas.jpg?x-oss-process=style/thumb'/>
 </a>
 </div>
