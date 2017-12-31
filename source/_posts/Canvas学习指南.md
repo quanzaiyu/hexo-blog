@@ -8,7 +8,7 @@ tags:
 
 
 
-> 本文已制作成完整电子书发布，这里只是简单介绍Canvas的常用操作，更多详情请查看《<u>[我的开发之路系列 - Canvas学习指南](https://www.kancloud.cn/book/xiaoyulive/learn/dashboard)</u>》
+> 本文已制作成完整电子书发布，这里只是简单介绍Canvas的常用操作，更多详情请查看《<u>[我的开发之路系列 - Canvas学习指南](http://book.canvas.xiaoyulive.top)</u>》
 
 
 <div style='text-align: center;'>
