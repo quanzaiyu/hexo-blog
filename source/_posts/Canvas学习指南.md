@@ -1,11 +1,14 @@
 ---
-title: Canvas学习笔记01 - 基础
+title: Canvas学习指南
 categories:
   - 前端开发
-  - Canvas学习笔记
 tags:
   - Canvas
 ---
+
+
+
+> 本文已制作成完整电子书发布到看云，本文只是简单介绍Canvas的常用操作，更多详情请关注《<u>[我的开发之路系列 - Canvas学习指南](https://www.kancloud.cn/book/xiaoyulive/learn/dashboard)</u>》
 
 
 
@@ -109,6 +112,150 @@ ctx.lineTo(100, 50);
 ctx.closePath();
 ctx.fill();
 ```
+
+
+
+# 绘制圆弧
+
+## arc
+
+`arc(x, y, r, startAngle, endAngle, anticlockwise)`
+
+- 以`(x, y)`为圆心，以`r`为半径，从 `startAngle`弧度开始到`endAngle`弧度结束，注意: 单位为弧度。
+- `anticlosewise`是布尔值，`true`表示逆时针，`false`表示顺时针。(默认是顺时针)
+- 0弧度为在一个笛卡尔坐标系中的x轴正方向
+- 通常使用`Math.PI`进行弧度运算，一个`Math.PI`就是`180deg`
+- `radians=(Math.PI/180)*degrees`   // 角度转换成弧度1
+
+如:
+
+```js
+ctx.beginPath();
+ctx.arc(50, 50, 40, 0, Math.PI / 2, false);
+ctx.stroke();
+```
+
+可以看到从x轴正方向顺时针绘制出了半径为40的 1/4 圆弧。
+
+
+
+## arcTo
+
+`arcTo(x1, y1, x2, y2, radius)`
+
+根据给定的控制点和半径画一段圆弧，最后再以直线连接两个控制点。
+
+```js
+ctx.beginPath();
+ctx.moveTo(50, 50);
+//参数1、2：控制点1坐标   参数3、4：控制点2坐标  参数5：圆弧半径
+ctx.arcTo(200, 50, 200, 200, 50);
+ctx.lineTo(200, 200)
+ctx.stroke();
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0021.jpg)
+
+可以理解为: 绘制的弧形是由两条切线所决定。
+
+ 第 1 条切线：起始点和控制点1决定的直线。
+
+ 第 2 条切线：控制点1 和控制点2决定的直线。
+
+圆弧半径可以回想一下css中`border-radius`的实现。
+
+
+
+# 贝塞尔曲线
+
+贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。
+
+ 一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋，我们在绘图工具上看到的钢笔工具就是来做这种矢量曲线的。
+
+## 原理动画
+
+一次贝塞尔曲线:
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0022.jpg) 
+
+二次贝塞尔曲线:
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0023.jpg)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0024.jpg)
+
+三次贝塞尔曲线:
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0025.jpg)
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0026.jpg)
+
+
+
+## 绘制贝塞尔曲线
+
+### 绘制二次贝塞尔曲线
+
+`quadraticCurveTo(cp1x, cp1y, x, y)`
+
+参数说明：
+
+- 参数1和2：控制点坐标
+- 参数3和4：结束点坐标
+
+```js
+ctx.beginPath();
+var bX = 10, bY = 160; // 起始点
+ctx.moveTo(bX, bY);
+var cX = 40, cY = 100;  // 控制点
+var toX = 180, toY = 180; // 结束点
+// 绘制二次贝塞尔曲线
+ctx.quadraticCurveTo(cX, cY, toX, toY);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.rect(bX, bY, 10, 10);
+ctx.rect(cX, cY, 10, 10);
+ctx.rect(toX, toY, 10, 10);
+ctx.fill();
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0027.png)
+
+为了方便理解，将起始点、控制点、结束点都用实心矩形标出。
+
+
+
+### 绘制三次贝塞尔曲线
+
+`bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)`：
+
+参数说明：
+
+- 参数1和2：控制点1的坐标
+- 参数3和4：控制点2的坐标
+- 参数5和6：结束点的坐标
+
+```js
+ctx.beginPath();
+var bX = 10, bY = 160; // 起始点
+ctx.moveTo(bX, bY);
+var cX1 = 20, cY1 = 50;  // 控制点1
+var cX2 = 60, cY2 = 150;  // 控制点2
+var toX = 180, toY = 180; // 结束点
+// 绘制二次贝塞尔曲线
+ctx.bezierCurveTo(cX1, cY1, cX2, cY2, toX, toY);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.rect(bX, bY, 10, 10);
+ctx.rect(cX1, cY1, 10, 10);
+ctx.rect(cX2, cY2, 10, 10);
+ctx.rect(toX, toY, 10, 10);
+ctx.fill();
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0028.png)
 
 
 
@@ -245,6 +392,87 @@ ctx.strokeText(text, 50, 100)
 
 
 
+
+# 渐变
+
+## 线性渐变
+
+使用`ctx.createLinearGradient(x1, y1, x2, y2)`可以创建一个线性渐变，线性渐变会从第一个点(x1, y1)扩展到第二个点(x2, y2)，即定义了渐变的线长与方向。
+
+如:
+
+```js
+var x1 = 0;
+var y1 = 0;
+var x2 = 100;
+var y2 = 0;
+var linearGradient1 = ctx.createLinearGradient(x1, y1, x2, y2);
+linearGradient1.addColorStop(0, 'rgb(255, 0, 0)');
+linearGradient1.addColorStop(0.5, 'rgb(0, 0, 255');
+linearGradient1.addColorStop(1, 'rgb(0, 0, 0)');
+ctx.fillStyle = linearGradient1
+
+ctx.fillRect(10, 10, 100, 50);
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0029.png)
+
+使用`addColorStop`可以添加一个颜色节点
+
+- 第一个参数是0-1之间的一个数值，这个数值指定该颜色进入渐变多长的距离
+- 第二个参数是颜色值
+
+
+
+
+## 径向渐变
+
+径向渐变是一种圆形的颜色扩展模式，颜色从圆心位置开始向外辐射。
+
+一个径向渐变于两个圆形来定义。每一个圆都有一个圆心和一条半径。
+
+使用`ctx.createRadialGradient(x1, y1, r1, x2, y2, r2)`可以创建一个径向渐变，(x1, y1, r1)和(x2, y2, r2)分别为两个圆的圆心坐标和半径。
+
+```js
+var x1 = 100;   // 第一个圆圆心的X坐标
+var y1 = 100;   // 第一个圆圆心的Y坐标
+var r1 = 30;    // 第一个圆的半径
+var x2 = 100;   // 第二个圆圆心的X坐标
+var y2 = 100;   // 第二个圆圆心的Y坐标
+var r2 = 100;   // 第二个圆的半径
+var radialGradient1 = ctx.createRadialGradient(x1, y1, r1, x2, y2, r2);
+radialGradient1.addColorStop(0, 'rgb(0, 0, 255)');
+radialGradient1.addColorStop(1, 'rgb(0, 255, 0)');
+ctx.fillStyle = radialGradient1
+
+ctx.fillRect(10, 10, 200, 200);
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0030.png)
+
+`addColorStop`的用法同线性渐变。
+
+如果两个圆形的圆心位置相同，那么径向渐变将是一个完整的圆形。如果两个圆的圆心位置不相同，那么径向渐变看起来就像是一个探照灯发出的光线。如:
+
+```js
+var x1 = 100;   // 第一个圆圆心的X坐标
+var y1 = 100;   // 第一个圆圆心的Y坐标
+var r1 = 30;    // 第一个圆的半径
+var x2 = 150;   // 第二个圆圆心的X坐标
+var y2 = 120;   // 第二个圆圆心的Y坐标
+var r2 = 100;   // 第二个圆的半径
+var radialGradient1 = ctx.createRadialGradient(x1, y1, r1, x2, y2, r2);
+radialGradient1.addColorStop(0, 'rgb(0, 0, 255)');
+radialGradient1.addColorStop(1, 'rgb(0, 255, 0)');
+ctx.fillStyle = radialGradient1
+
+ctx.fillRect(10, 10, 200, 200);
+```
+
+![](http://xiaoyulive.oss-cn-beijing.aliyuncs.com/imgs/0031.png)
+
+
+
 # 绘制图片
 
 使用`drawImage`绘制图像
@@ -318,8 +546,12 @@ ctx.fillRect(30,30,50,50)
 
 # 参考资料
 
- [学习HTML5 Canvas这一篇文章就够了](http://blog.csdn.net/u012468376/article/details/73350998) 
+[MDN: CanvasRenderingContext2D](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D)
 
-[HTML5 Canvas 学习](http://www.jianshu.com/p/14164d222f0b) 
+[CSDN: 学习HTML5 Canvas这一篇文章就够了](http://blog.csdn.net/u012468376/article/details/73350998)
 
-[HTML5之Canvas 2D入门2 - Canvas绘制图形](http://blog.csdn.net/pyx6119822/article/details/52384637) 
+[CSDN: HTML5之Canvas 2D入门2 - Canvas绘制图形](http://blog.csdn.net/pyx6119822/article/details/52384637)
+
+[简书: HTML5 Canvas 学习](http://www.jianshu.com/p/14164d222f0b)
+
+[w3cplus: Canvas学习](https://www.w3cplus.com/blog/tags/616.html) 
