@@ -1,5 +1,5 @@
 ---
-title: python3学习指南
+title: 我的开发之路系列 - python3学习指南
 categories:
   - Python
 tags:

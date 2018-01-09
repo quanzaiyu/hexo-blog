@@ -1,5 +1,5 @@
 ---
-title: Canvas学习指南
+title: 我的开发之路系列 - Canvas学习指南
 categories:
   - 前端开发
 tags:
