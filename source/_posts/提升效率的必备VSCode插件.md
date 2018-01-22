@@ -719,6 +719,26 @@ bracket-jumper.selectAscendRight: { Mac: ctrl+shift+down, Windows/Linux: ctrl+al
 
 
 
+
+### [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+
+To run code: 
+
+- use shortcut `Ctrl+Alt+N`
+- or press `F1` and then select/type `Run Code`,
+- or right click the Text Editor and then click `Run Code` in editor context menu
+- or click `Run Code` button in edit
+- or title menuor click `Run Code` button in context menu of file explorer
+
+To stop the running code: 
+
+- use shortcut `Ctrl+Alt+M`
+- or press `F1` and then select/type `Stop Code Run`
+- or right click the Output Channel and then click `Stop Code Run` in context menu
+
+
+
+
 ### [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis) 
 
 为`js`和`ts`添加`JSDoc`风格的注释，使用`Ctrl + Alt + D + D` 激活。
