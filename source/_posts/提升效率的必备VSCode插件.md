@@ -304,6 +304,14 @@ module.exports = {
 
 
 
+### [vscode-wechat](https://marketplace.visualstudio.com/items?itemName=qinjia.vscode-wechat)
+
+
+
+提供小程序开发对应的`wxml`、`wxss`语法高亮支持，并提供对应的 snippets
+
+
+
 ### [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets) 
 
 **Snippet**
