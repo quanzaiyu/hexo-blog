@@ -128,6 +128,12 @@ Alt + C # 选中/取消 任务列表
 
 ## 代码高亮与语言支持
 
+### [vscode wxml](https://marketplace.visualstudio.com/items?itemName=coderfee.vscode-wxml)
+
+> 提供对微信小程序 `wxml` 语法高亮的支持。
+
+
+
 ### [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)   
 
 > 提供对Vue的支持，资料:  [Vetur Doc - GitBook](https://vuejs.github.io/vetur/)
