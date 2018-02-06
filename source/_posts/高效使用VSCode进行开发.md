@@ -143,6 +143,87 @@ Emmet: Expand Abbreviation # 代码展开
 
 
 
+## 自定义编辑器配置片段
+
+```js
+{
+    // flies
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "files.associations": {
+        "*.lock": "yaml",
+        "*.ejs": "ejs",
+        "*.wxss": "css"
+    },
+    // editor
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+    "editor.fontSize": 24,
+    "editor.tabSize": 2,
+    "editor.cursorStyle": "line",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "bounded",
+    "editor.tabCompletion": true,
+    "editor.snippetSuggestions": "top",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    // eslint
+    "eslint.options": {
+        "plugins": ["html"]
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "vue"
+    ],
+    "vetur.validation.template": false,
+    // window
+    "window.openFilesInNewWindow": "on",
+    "window.restoreWindows": "all",
+    "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${appName}",
+    // other
+    "workbench.iconTheme": "material-icon-theme",
+    "sublimeTextKeymap.promptV3Features": true,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.cursorStyle": "line",
+    "window.zoomLevel": 0,
+    "git.enableSmartCommit": true,"emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.startupEditor": "welcomePage",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+    "fileheader.Author": "Quanzaiyu",
+    "emojisense.languages": {
+        "markdown": true,
+        "plaintext": {
+          "markupCompletionsEnabled": false,
+          "emojiDecoratorsEnabled": false
+        },
+        "git-commit": true,
+        "html": true
+      },
+    "editor.matchBrackets": false
+}
+```
+
+
+
+
+
+
+
 # 参考资料
 
 - 博客园 - 玄奘Plus : [VSCode 插件](http://www.cnblogs.com/it-jason/p/6722347.html)
